@@ -4,6 +4,7 @@ import CityPage from "@/components/CityPage"
 export const metadata: Metadata = {
   title: "Tennis Lessons in Palm Bay FL | Coach Tim Brielmaier",
   description: "RSPA certified tennis and pickleball lessons in Palm Bay, FL. Coach Tim Brielmaier comes to your court. Private $80/hr, clinics $20/person. All ages & skill levels.",
+  alternates: { canonical: "https://hontennis.com/tennis-lessons-palm-bay" },
 }
 
 export default function PalmBayPage() {

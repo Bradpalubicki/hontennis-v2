@@ -16,7 +16,7 @@ const locationLinks = [
   { href: "/tennis-lessons-palm-bay", label: "Palm Bay" },
   { href: "/tennis-lessons-viera", label: "Viera" },
   { href: "/tennis-lessons-rockledge", label: "Rockledge" },
-  { href: "/tennis-lessons-cocoa-beach", label: "Indialantic" },
+  { href: "/tennis-lessons-indialantic", label: "Indialantic" },
   { href: "/tennis-lessons-vero-beach", label: "Vero Beach" },
   { href: "/tennis-lessons-sebastian", label: "Sebastian" },
 ]
@@ -170,7 +170,7 @@ export default function Footer() {
           </p>
           <p className="text-[#F5F0E8]/20 text-xs">
             Built by{" "}
-            <a href="https://nustack.digital" className="hover:text-[#C9A84C] transition-colors">
+            <a href="https://nustack.digital" target="_blank" rel="noopener noreferrer" className="hover:text-[#C9A84C] transition-colors">
               NuStack Digital Ventures
             </a>
           </p>

@@ -9,6 +9,7 @@ import { useState } from "react"
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(7, "Please enter a valid phone number"),
   message: z.string().min(5, "Tell Tim what you're working on"),
 })
@@ -148,6 +149,21 @@ export default function ContactSection() {
                         placeholder="First and last name"
                       />
                       {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name.message}</p>}
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-medium text-[#F5F0E8]/70 mb-2" htmlFor="email">
+                        Email Address
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        autoComplete="email"
+                        {...register("email")}
+                        className="w-full bg-[#0A0F1E] border border-[#C9A84C]/20 rounded-xl px-4 py-3 text-[#F5F0E8] placeholder-[#F5F0E8]/20 focus:outline-none focus:border-[#C9A84C]/60 transition-colors text-base min-h-[48px]"
+                        placeholder="you@example.com"
+                      />
+                      {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
                     </div>
 
                     <div>

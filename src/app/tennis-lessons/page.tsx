@@ -5,8 +5,15 @@ import ContactSection from "@/components/ContactSection"
 import { Award, CheckCircle, Clock, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Tennis Lessons | Coach Tim Brielmaier — Space Coast FL",
+  title: "Tennis Lessons — Space Coast FL",
   description: "Private, group, and clinic tennis lessons across Florida's Space Coast. RSPA certified Coach Tim Brielmaier comes to your court. Melbourne, Palm Bay, Viera & more. $80/hr.",
+  alternates: { canonical: "https://hontennis.com/tennis-lessons" },
+  openGraph: {
+    title: "Tennis Lessons | Coach Tim Brielmaier — Space Coast FL",
+    description: "RSPA certified tennis coaching — comes to your court across Melbourne, Palm Bay, Viera & more.",
+    url: "https://hontennis.com/tennis-lessons",
+    images: [{ url: "https://hontennis.com/images/tennis-coaching-lesson.jpg", width: 1200, height: 800, alt: "Coach Tim Brielmaier tennis lesson" }],
+  },
 }
 
 const highlights = [

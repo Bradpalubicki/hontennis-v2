@@ -4,8 +4,15 @@ import AboutSection from "@/components/AboutSection"
 import ContactSection from "@/components/ContactSection"
 
 export const metadata: Metadata = {
-  title: "About Coach Tim Brielmaier | HON Tennis",
+  title: "About Coach Tim Brielmaier",
   description: "Meet Coach Tim Brielmaier — 40+ years of tennis and pickleball coaching experience. RSPA & IPTPA certified. Former Director of Tennis at Vizcaya Clubhouse. Serving the Space Coast & Treasure Coast, Florida.",
+  alternates: { canonical: "https://hontennis.com/about" },
+  openGraph: {
+    title: "About Coach Tim Brielmaier | HON Tennis",
+    description: "40+ years of tennis and pickleball coaching experience. RSPA & IPTPA certified. Serving Florida's Space Coast.",
+    url: "https://hontennis.com/about",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier" }],
+  },
 }
 
 export default function AboutPage() {

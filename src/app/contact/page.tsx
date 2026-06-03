@@ -4,8 +4,15 @@ import ContactSection from "@/components/ContactSection"
 import { Phone, Mail, MapPin, Award } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Book a Lesson | HON Tennis — Coach Tim Brielmaier",
+  title: "Book a Lesson",
   description: "Book a tennis or pickleball lesson with Coach Tim Brielmaier online via Square, or call/text Tim directly at (414) 232-6840. Serving Melbourne, Palm Bay, Viera, and all of Florida's Space Coast.",
+  alternates: { canonical: "https://hontennis.com/contact" },
+  openGraph: {
+    title: "Book a Lesson | HON Tennis — Coach Tim Brielmaier",
+    description: "Book a tennis or pickleball lesson with Coach Tim Brielmaier. Comes to your court across Florida's Space Coast.",
+    url: "https://hontennis.com/contact",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier" }],
+  },
 }
 
 export default function ContactPage() {

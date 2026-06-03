@@ -4,8 +4,15 @@ import ContactSection from "@/components/ContactSection"
 import { Star } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Reviews | HON Tennis — Coach Tim Brielmaier",
+  title: "Student Reviews",
   description: "Read reviews from students of Coach Tim Brielmaier — tennis and pickleball coaching across Florida's Space Coast. See what players are saying about their experience.",
+  alternates: { canonical: "https://hontennis.com/reviews" },
+  openGraph: {
+    title: "Student Reviews | HON Tennis — Coach Tim Brielmaier",
+    description: "5-star reviews from tennis and pickleball students across Florida's Space Coast.",
+    url: "https://hontennis.com/reviews",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier" }],
+  },
 }
 
 const reviews = [

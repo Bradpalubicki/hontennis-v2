@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X, Phone } from "lucide-react"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 const navLinks = [
@@ -19,6 +20,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const shouldReduce = useReducedMotion()
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -26,8 +28,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
+  const isActive = (href: string) => {
+    if (href === "/education") return pathname.startsWith("/education")
+    return pathname === href
+  }
+
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A84C] focus:text-[#0A0F1E] focus:font-bold focus:px-4 focus:py-2 focus:rounded-lg"
+      >
+        Skip to main content
+      </a>
+
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
@@ -54,16 +68,27 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Nav — centered */}
-            <nav className="hidden lg:flex items-center gap-6 flex-1 justify-center">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-[#F5F0E8]/75 hover:text-[#C9A84C] text-sm tracking-wide transition-colors duration-200 font-medium whitespace-nowrap"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <nav className="hidden lg:flex items-center gap-6 flex-1 justify-center" aria-label="Main navigation">
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`text-sm tracking-wide transition-colors duration-200 font-medium whitespace-nowrap relative ${
+                      active
+                        ? "text-[#C9A84C]"
+                        : "text-[#F5F0E8]/75 hover:text-[#C9A84C]"
+                    }`}
+                  >
+                    {link.label}
+                    {active && (
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#C9A84C] rounded-full" />
+                    )}
+                  </Link>
+                )
+              })}
             </nav>
 
             {/* Right side — stacked Book + Phone */}
@@ -90,6 +115,8 @@ export default function Navbar() {
               onClick={() => setOpen(!open)}
               className="lg:hidden text-[#F5F0E8] p-2 shrink-0"
               aria-label="Toggle menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
             >
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -101,24 +128,31 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
             initial={shouldReduce ? { opacity: 1 } : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={shouldReduce ? { opacity: 0 } : { opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-40 bg-[#0A0F1E]/98 backdrop-blur-md pt-24 px-6 lg:hidden"
           >
-            <nav className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-[#F5F0E8] text-2xl py-3 border-b border-[#C9A84C]/10 hover:text-[#C9A84C] transition-colors"
-                  style={{ fontFamily: "var(--font-playfair)" }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`text-2xl py-3 border-b border-[#C9A84C]/10 transition-colors ${
+                      active ? "text-[#C9A84C]" : "text-[#F5F0E8] hover:text-[#C9A84C]"
+                    }`}
+                    style={{ fontFamily: "var(--font-playfair)" }}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
               <a
                 href={SQUARE_BOOKING_URL || "/#book"}
                 className="mt-6 flex items-center justify-center gap-2 bg-[#C9A84C] text-[#0A0F1E] font-bold text-lg px-6 py-4 rounded-full"

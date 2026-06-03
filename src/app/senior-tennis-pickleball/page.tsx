@@ -5,8 +5,15 @@ import ContactSection from "@/components/ContactSection"
 import { Heart, Shield, Activity, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Senior Tennis & Pickleball Coaching | Coach Tim Brielmaier — Space Coast FL",
+  title: "Senior Tennis & Pickleball Coaching",
   description: "Specialized tennis and pickleball coaching for players 55+. Coach Tim Brielmaier focuses on sustainable movement, injury prevention, and lifelong enjoyment of the sport. Mobile coaching across Florida's Space Coast.",
+  alternates: { canonical: "https://hontennis.com/senior-tennis-pickleball" },
+  openGraph: {
+    title: "Senior Tennis & Pickleball Coaching | HON Tennis",
+    description: "Specialized coaching for players 55+. Sustainable movement, injury prevention, and lifelong sport.",
+    url: "https://hontennis.com/senior-tennis-pickleball",
+    images: [{ url: "https://hontennis.com/images/senior-tennis-active.webp", width: 1200, height: 800, alt: "Senior tennis coaching" }],
+  },
 }
 
 const pillars = [

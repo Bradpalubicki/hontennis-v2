@@ -3,6 +3,7 @@ import { z } from "zod"
 
 const schema = z.object({
   name: z.string().min(2),
+  email: z.string().email().optional().or(z.literal("")),
   phone: z.string().min(7),
   message: z.string().min(5),
 })
@@ -22,6 +23,7 @@ export async function POST(req: NextRequest) {
         subject: `New lesson inquiry from ${data.name}`,
         text: `
 Name: ${data.name}
+Email: ${data.email || "not provided"}
 Phone: ${data.phone}
 
 Message:

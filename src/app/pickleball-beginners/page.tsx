@@ -5,8 +5,15 @@ import ContactSection from "@/components/ContactSection"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Pickleball for Beginners | Coach Tim Brielmaier — Space Coast FL",
+  title: "Pickleball for Beginners — Space Coast FL",
   description: "Never played pickleball? Coach Tim Brielmaier starts you from zero — rules, scoring, serve, and strokes. IPTPA certified instruction across Florida's Space Coast. $20/person clinics, $80/hr private.",
+  alternates: { canonical: "https://hontennis.com/pickleball-beginners" },
+  openGraph: {
+    title: "Pickleball for Beginners | Coach Tim Brielmaier",
+    description: "Start from zero with IPTPA certified Coach Tim. $20/person clinics across Florida's Space Coast.",
+    url: "https://hontennis.com/pickleball-beginners",
+    images: [{ url: "https://hontennis.com/images/pickleball-players.webp", width: 1200, height: 800, alt: "Pickleball beginners on court" }],
+  },
 }
 
 const steps = [

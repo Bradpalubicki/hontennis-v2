@@ -6,6 +6,7 @@ import { MessageCircle } from "lucide-react"
 
 export default function TextTimButton() {
   const [visible, setVisible] = useState(false)
+  const [nearFooter, setNearFooter] = useState(false)
   const shouldReduce = useReducedMotion()
 
   useEffect(() => {
@@ -13,9 +14,19 @@ export default function TextTimButton() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollBottom = window.scrollY + window.innerHeight
+      const pageHeight = document.documentElement.scrollHeight
+      setNearFooter(scrollBottom >= pageHeight - 120)
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
   return (
     <AnimatePresence>
-      {visible && (
+      {visible && !nearFooter && (
         <motion.a
           href="sms:+14142326840?body=Hi Tim, I'd like to book a lesson!"
           initial={shouldReduce ? { opacity: 1 } : { opacity: 0, y: 20 }}

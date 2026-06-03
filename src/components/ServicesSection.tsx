@@ -103,14 +103,14 @@ export default function ServicesSection() {
         <motion.div {...fade(0)} className="text-center mb-16">
           <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">What Tim Offers</p>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#F5F0E8] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
-            Services & Pricing
+            All Coaching Services
           </h2>
           <p className="text-[#F5F0E8]/60 max-w-xl mx-auto text-lg">
             All sessions come to your court — no facility fees, no travel required on your end.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+        <div id="clinics" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12" style={{ scrollMarginTop: "100px" }}>
           {services.map((service, i) => (
             <motion.a
               key={service.title}

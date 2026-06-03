@@ -4,8 +4,15 @@ import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
 
 export const metadata: Metadata = {
-  title: "Services & Pricing | HON Tennis — Coach Tim Brielmaier",
+  title: "Services & Pricing",
   description: "Full list of tennis and pickleball coaching services from Coach Tim Brielmaier. Private lessons $80/hr, group lessons, clinics $20/person, senior coaching, remote coaching, racquet stringing, and Har-Tru court maintenance.",
+  alternates: { canonical: "https://hontennis.com/services" },
+  openGraph: {
+    title: "Services & Pricing | HON Tennis — Coach Tim Brielmaier",
+    description: "Private lessons $80/hr, clinics $20/person, senior coaching, racquet stringing, and court maintenance.",
+    url: "https://hontennis.com/services",
+    images: [{ url: "https://hontennis.com/images/tim-with-ladies.jpg", width: 1200, height: 800, alt: "Coach Tim Brielmaier with students" }],
+  },
 }
 
 export default function ServicesPage() {
