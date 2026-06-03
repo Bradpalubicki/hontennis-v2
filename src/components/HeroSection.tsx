@@ -2,7 +2,6 @@
 
 import { useReducedMotion, motion, AnimatePresence } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { Phone, ChevronDown } from "lucide-react"
 
@@ -182,7 +181,7 @@ export default function HeroSection() {
               </motion.p>
             </div>
 
-            {/* RIGHT — rotating Tim photos, heads always visible */}
+            {/* RIGHT — Tim's photo, full visible, no crop */}
             <motion.div
               initial={shouldReduce ? {} : { opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -192,7 +191,6 @@ export default function HeroSection() {
               {/* Gold glow behind photo */}
               <div className="absolute -inset-4 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.1),transparent_70%)] rounded-3xl" />
 
-              {/* Photo container — tall aspect ratio, object-top so heads are always visible */}
               <div className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg rounded-2xl overflow-hidden border border-[#C9A84C]/20 shadow-2xl shadow-[#0A0F1E]">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -201,22 +199,19 @@ export default function HeroSection() {
                     animate={{ opacity: 1 }}
                     exit={shouldReduce ? {} : { opacity: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative"
                   >
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={currentPhoto.src}
                       alt={currentPhoto.alt}
-                      width={600}
-                      height={750}
-                      priority={photoIndex === 0}
-                      className={`w-full h-auto ${currentPhoto.position}`}
-                      style={{ display: "block" }}
+                      className="w-full h-auto block"
+                      style={{ maxHeight: "none" }}
                     />
                   </motion.div>
                 </AnimatePresence>
 
                 {/* Bottom overlay with badges + photo dots */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0F1E]/95 via-[#0A0F1E]/50 to-transparent pt-16 pb-4 px-4">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0F1E]/90 via-[#0A0F1E]/40 to-transparent pt-12 pb-4 px-4">
                   <div className="flex items-center justify-between">
                     <div className="flex gap-2 flex-wrap">
                       <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2.5 py-1 rounded font-bold">RSPA Tennis</span>
