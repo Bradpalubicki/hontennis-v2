@@ -1,6 +1,6 @@
 "use client"
 
-import { useReducedMotion, motion, AnimatePresence } from "framer-motion"
+import { useReducedMotion, motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { Phone, ChevronDown } from "lucide-react"
@@ -10,20 +10,6 @@ const stats = [
   { value: 2, suffix: "", label: "Sports" },
   { value: 8, suffix: "+", label: "Locations" },
   { value: 100, suffix: "%", label: "Mobile — Your Court" },
-]
-
-// Rotating hero photos — Tim on real Florida courts, heads fully visible
-const heroPhotos = [
-  {
-    src: "/images/tim-at-net.webp",
-    alt: "Coach Tim Brielmaier at the net — tennis court, Space Coast Florida",
-    position: "object-top",
-  },
-  {
-    src: "/images/tim-with-ladies.jpg",
-    alt: "Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida",
-    position: "object-top",
-  },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -48,17 +34,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export default function HeroSection() {
   const shouldReduce = useReducedMotion()
   const [statsVisible, setStatsVisible] = useState(false)
-  const [photoIndex, setPhotoIndex] = useState(0)
   const statsRef = useRef<HTMLDivElement>(null)
-
-  // Rotate hero photo every 5 seconds
-  useEffect(() => {
-    if (shouldReduce) return
-    const timer = setInterval(() => {
-      setPhotoIndex(i => (i + 1) % heroPhotos.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [shouldReduce])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -181,7 +157,7 @@ export default function HeroSection() {
               </motion.p>
             </div>
 
-            {/* RIGHT — Tim's photo, full visible, no crop */}
+            {/* RIGHT — Tim at the net, static, full photo visible */}
             <motion.div
               initial={shouldReduce ? {} : { opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -192,42 +168,18 @@ export default function HeroSection() {
               <div className="absolute -inset-4 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.1),transparent_70%)] rounded-3xl" />
 
               <div className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg rounded-2xl overflow-hidden border border-[#C9A84C]/20 shadow-2xl shadow-[#0A0F1E]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={photoIndex}
-                    initial={shouldReduce ? {} : { opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={shouldReduce ? {} : { opacity: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={currentPhoto.src}
-                      alt={currentPhoto.alt}
-                      className="w-full h-auto block"
-                      style={{ maxHeight: "none" }}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Bottom overlay with badges + photo dots */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/tim-at-net.webp"
+                  alt="Coach Tim Brielmaier at the net — tennis court, palm trees, Space Coast Florida"
+                  className="w-full h-auto block"
+                />
+                {/* Bottom overlay with cert badges */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0F1E]/90 via-[#0A0F1E]/40 to-transparent pt-12 pb-4 px-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2 flex-wrap">
-                      <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2.5 py-1 rounded font-bold">RSPA Tennis</span>
-                      <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2.5 py-1 rounded font-bold">IPTPA Pickleball</span>
-                    </div>
-                    {/* Photo dots */}
-                    <div className="flex gap-1.5">
-                      {heroPhotos.map((_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setPhotoIndex(i)}
-                          className={`w-2 h-2 rounded-full transition-all duration-300 ${i === photoIndex ? "bg-[#C9A84C] w-4" : "bg-white/30"}`}
-                          aria-label={`View photo ${i + 1}`}
-                        />
-                      ))}
-                    </div>
+                  <div className="flex gap-2 flex-wrap">
+                    <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2.5 py-1 rounded font-bold">RSPA Tennis</span>
+                    <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2.5 py-1 rounded font-bold">IPTPA Pickleball</span>
+                    <span className="text-xs font-mono tracking-wider uppercase bg-white/15 text-white px-2.5 py-1 rounded">40+ Years</span>
                   </div>
                 </div>
               </div>
