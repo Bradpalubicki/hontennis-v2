@@ -29,15 +29,16 @@ export default function SportSplitSection() {
         <motion.div {...fade(0.05)} className="relative w-full rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/tim-with-ladies.jpg"
-            alt="Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida"
+            src="/images/kiwi-courts.jpg"
+            alt="Tennis player at Kiwi Racquet and Fitness Club — Indian Harbour Beach, Space Coast Florida"
             className="w-full h-auto block"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/60 via-[#0A0F1E]/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/65 via-[#0A0F1E]/15 to-transparent" />
           <div className="absolute bottom-4 left-6">
             <p className="text-[#F5F0E8] text-lg font-bold leading-snug" style={{ fontFamily: "var(--font-playfair)" }}>
-              Coach Tim with students — Space Coast, Florida
+              Space Coast Florida — Where Tim Coaches
             </p>
+            <p className="text-[#C9A84C] text-xs font-mono mt-1">Indian Harbour Beach · Melbourne · Viera · Palm Bay</p>
           </div>
         </motion.div>
 

@@ -113,21 +113,60 @@ export default function Footer() {
               <li>
                 <div className="flex items-start gap-2 text-[#F5F0E8]/60 text-sm">
                   <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                  Space Coast & Treasure Coast, Florida
+                  Melbourne, FL · Space Coast &amp; Treasure Coast
                 </div>
               </li>
             </ul>
+            <div className="mt-6 space-y-1">
+              <p className="text-[#F5F0E8]/40 text-xs">Responds within 1 business day</p>
+              <p className="text-[#F5F0E8]/40 text-xs">Comes to your court — no travel needed</p>
+            </div>
+
+            {/* External authority links — SEO */}
             <div className="mt-6">
-              <p className="text-[#F5F0E8]/40 text-xs">Response within 1 business day</p>
-              <p className="text-[#F5F0E8]/40 text-xs mt-1">I come to your court — no travel needed</p>
+              <p className="text-[#C9A84C]/50 text-xs font-mono uppercase tracking-wider mb-2">Certifications</p>
+              <ul className="space-y-1.5">
+                <li>
+                  <a href="https://www.rspa.com" target="_blank" rel="noopener noreferrer" className="text-[#F5F0E8]/35 hover:text-[#C9A84C] text-xs transition-colors">
+                    RSPA — Racquet Sports Professionals ↗
+                  </a>
+                </li>
+                <li>
+                  <a href="https://iptpa.com" target="_blank" rel="noopener noreferrer" className="text-[#F5F0E8]/35 hover:text-[#C9A84C] text-xs transition-colors">
+                    IPTPA — Pickleball Teaching Pro ↗
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.usapickleball.org" target="_blank" rel="noopener noreferrer" className="text-[#F5F0E8]/35 hover:text-[#C9A84C] text-xs transition-colors">
+                    USA Pickleball — Official Rules ↗
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
 
+        {/* Education links row — internal SEO */}
+        <div className="mt-10 pt-6 border-t border-[#C9A84C]/10">
+          <p className="text-[#C9A84C]/40 text-xs font-mono uppercase tracking-wider mb-3">Tennis &amp; Pickleball Guides</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {[
+              { href: "/education/how-much-do-tennis-lessons-cost-florida", label: "Tennis Lesson Costs in Florida" },
+              { href: "/education/tennis-vs-pickleball-which-should-you-learn", label: "Tennis vs. Pickleball" },
+              { href: "/education/what-is-rspa-certification-tennis-coach", label: "RSPA Certification Guide" },
+              { href: "/education/how-to-find-pickleball-coach-near-you", label: "Find a Pickleball Coach" },
+              { href: "/education/best-tennis-courts-space-coast-florida", label: "Best Courts on the Space Coast" },
+              { href: "/education/senior-tennis-pickleball-health-benefits", label: "Senior Tennis &amp; Pickleball" },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="text-[#F5F0E8]/30 hover:text-[#C9A84C] text-xs transition-colors" dangerouslySetInnerHTML={{ __html: l.label }} />
+            ))}
+          </div>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-[#C9A84C]/10 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="mt-8 pt-6 border-t border-[#C9A84C]/10 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-[#F5F0E8]/30 text-xs">
-            © {new Date().getFullYear()} HON Tennis — Coach Tim Brielmaier. All rights reserved.
+            © {new Date().getFullYear()} HON Tennis — Coach Tim Brielmaier · Melbourne, FL · Space Coast Florida. All rights reserved.
           </p>
           <p className="text-[#F5F0E8]/20 text-xs">
             Built by{" "}

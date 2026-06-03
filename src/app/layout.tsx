@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   description:
     "Tennis & pickleball lessons that meet you where you are. Coach Tim Brielmaier comes to your court across Melbourne, Palm Bay, Viera, and all of Florida's Space Coast. 40+ years experience, RSPA & IPTPA certified.",
   keywords:
-    "tennis lessons Melbourne FL, pickleball coach Space Coast, tennis instructor Brevard County, HON tennis, Coach Tim Brielmaier, pickleball lessons Florida, RSPA certified tennis, IPTPA pickleball instructor, mobile tennis coach Florida",
+    "tennis lessons Melbourne FL, pickleball coach Space Coast, tennis instructor Brevard County, HON tennis, Coach Tim Brielmaier, pickleball lessons Florida, RSPA certified tennis, IPTPA pickleball instructor, mobile tennis coach Florida, tennis lessons Viera FL, pickleball coach Palm Bay, tennis instructor Indian Harbour Beach, Brevard County tennis, Space Coast pickleball, Melbourne Florida tennis coach, Treasure Coast tennis lessons",
   authors: [{ name: "Tim Brielmaier", url: "https://hontennis.com/about" }],
   creator: "Tim Brielmaier",
   robots: {
