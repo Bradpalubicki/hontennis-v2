@@ -39,7 +39,7 @@ export default function RSPACertificationPage() {
 
       <article className="bg-[#0A0F1E]">
         <div className="relative h-64 w-full overflow-hidden">
-          <Image src="/images/coach-tim-clinic.webp" alt="RSPA certified tennis coach Tim Brielmaier" fill className="object-cover object-center" sizes="100vw" priority />
+          <Image src="/images/coach-tim-clinic.webp" alt="RSPA certified tennis coach Tim Brielmaier" fill className="object-cover object-top" sizes="100vw" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
         </div>
 

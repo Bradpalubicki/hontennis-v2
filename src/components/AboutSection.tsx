@@ -63,7 +63,7 @@ export default function AboutSection() {
                 src="/images/tim-action-3.jpg"
                 alt="Coach Tim Brielmaier with students on a Florida tennis court"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/70 via-transparent to-transparent" />
@@ -158,7 +158,7 @@ export default function AboutSection() {
             src="/images/tim-action-1.jpg"
             alt="Florida tennis courts — Space Coast"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-[#0A0F1E]/60" />

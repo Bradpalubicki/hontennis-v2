@@ -25,19 +25,19 @@ export default function SportSplitSection() {
           </h2>
         </motion.div>
 
-        {/* Clinic photo banner */}
-        <motion.div {...fade(0.05)} className="relative w-full h-56 rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
+        {/* Clinic photo banner — object-top ensures heads always visible */}
+        <motion.div {...fade(0.05)} className="relative w-full h-64 rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
           <Image
-            src="/images/tim-action-3.jpg"
-            alt="Coach Tim Brielmaier with students on a Florida tennis court"
+            src="/images/tim-with-ladies.jpg"
+            alt="Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida"
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             sizes="(max-width: 1280px) 100vw, 1280px"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/80 via-[#0A0F1E]/30 to-transparent" />
-          <div className="absolute inset-0 flex items-center px-8">
-            <p className="text-[#F5F0E8] text-xl font-bold max-w-sm leading-snug" style={{ fontFamily: "var(--font-playfair)" }}>
-              Coach Tim in action — Space Coast, Florida
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/70 via-[#0A0F1E]/20 to-transparent" />
+          <div className="absolute bottom-4 left-6">
+            <p className="text-[#F5F0E8] text-lg font-bold leading-snug" style={{ fontFamily: "var(--font-playfair)" }}>
+              Coach Tim with students — Space Coast, Florida
             </p>
           </div>
         </motion.div>

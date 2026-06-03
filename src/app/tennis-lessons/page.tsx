@@ -54,7 +54,7 @@ export default function TennisLessonsPage() {
           alt="Coach Tim Brielmaier giving a tennis lesson"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />

@@ -91,7 +91,7 @@ export default function ServiceAreaSection() {
                 src="/images/coach-tim-clinic.webp"
                 alt="Coach Tim running a clinic on the Space Coast"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-[#0A0F1E]/50" />

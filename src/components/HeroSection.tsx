@@ -1,6 +1,6 @@
 "use client"
 
-import { useReducedMotion, motion } from "framer-motion"
+import { useReducedMotion, motion, AnimatePresence } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,6 +11,20 @@ const stats = [
   { value: 2, suffix: "", label: "Sports" },
   { value: 8, suffix: "+", label: "Locations" },
   { value: 100, suffix: "%", label: "Mobile — Your Court" },
+]
+
+// Rotating hero photos — Tim on real Florida courts, heads fully visible
+const heroPhotos = [
+  {
+    src: "/images/tim-with-ladies.jpg",
+    alt: "Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida",
+    position: "object-top",
+  },
+  {
+    src: "/images/tim-action-3.jpg",
+    alt: "Coach Tim Brielmaier with group tennis students on a Florida court",
+    position: "object-top",
+  },
 ]
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
@@ -35,7 +49,17 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export default function HeroSection() {
   const shouldReduce = useReducedMotion()
   const [statsVisible, setStatsVisible] = useState(false)
+  const [photoIndex, setPhotoIndex] = useState(0)
   const statsRef = useRef<HTMLDivElement>(null)
+
+  // Rotate hero photo every 5 seconds
+  useEffect(() => {
+    if (shouldReduce) return
+    const timer = setInterval(() => {
+      setPhotoIndex(i => (i + 1) % heroPhotos.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [shouldReduce])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,9 +70,11 @@ export default function HeroSection() {
     return () => observer.disconnect()
   }, [])
 
+  const currentPhoto = heroPhotos[photoIndex]
+
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0A0F1E]">
-      {/* Background court grid — subtle */}
+      {/* Background court grid */}
       <div
         className="absolute inset-0 opacity-[0.025]"
         style={{
@@ -56,15 +82,14 @@ export default function HeroSection() {
           backgroundSize: "80px 80px",
         }}
       />
-      {/* Gold radial glow top-left (behind text) */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_top_left,rgba(201,168,76,0.08),transparent_70%)]" />
+      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_top_left,rgba(201,168,76,0.07),transparent_70%)]" />
 
       {/* Main content — two column */}
       <div className="relative z-10 flex-1 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-            {/* LEFT — text content */}
+            {/* LEFT — text */}
             <div>
               {/* Sport tags */}
               <motion.div
@@ -74,13 +99,13 @@ export default function HeroSection() {
                 className="flex flex-wrap gap-2 mb-7"
               >
                 <span className="text-xs font-mono tracking-widest uppercase bg-[#C9A84C]/10 border border-[#C9A84C]/30 text-[#C9A84C] px-3 py-1.5 rounded-full">
-                  Tennis
+                  🎾 Tennis
                 </span>
                 <span className="text-xs font-mono tracking-widest uppercase bg-[#2D6A4F]/20 border border-[#2D6A4F]/40 text-[#6FCF97] px-3 py-1.5 rounded-full">
-                  Pickleball
+                  🏓 Pickleball
                 </span>
                 <span className="text-xs font-mono tracking-widest uppercase bg-white/5 border border-white/10 text-[#F5F0E8]/50 px-3 py-1.5 rounded-full">
-                  Space Coast, FL
+                  📍 Space Coast, FL
                 </span>
               </motion.div>
 
@@ -97,7 +122,7 @@ export default function HeroSection() {
                 {" & "}
                 <span className="text-gold-gradient">Pickleball</span>
                 <br />
-                <span className="text-[#F5F0E8]/60 text-3xl sm:text-4xl lg:text-4xl xl:text-5xl">
+                <span className="text-[#F5F0E8]/60 text-3xl sm:text-4xl xl:text-5xl">
                   at Any Age.
                 </span>
               </motion.h1>
@@ -153,11 +178,11 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="mt-5 text-xs text-[#F5F0E8]/35 font-mono tracking-wide"
               >
-                RSPA Certified &nbsp;·&nbsp; IPTPA Certified &nbsp;·&nbsp; Responds within 1 business day
+                RSPA Certified Tennis &nbsp;·&nbsp; IPTPA Certified Pickleball &nbsp;·&nbsp; Responds within 1 business day
               </motion.p>
             </div>
 
-            {/* RIGHT — Tim's portrait, fully visible, no crop */}
+            {/* RIGHT — rotating Tim photos, heads always visible */}
             <motion.div
               initial={shouldReduce ? {} : { opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
@@ -165,25 +190,49 @@ export default function HeroSection() {
               className="relative flex justify-center lg:justify-end"
             >
               {/* Gold glow behind photo */}
-              <div className="absolute -inset-4 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.12),transparent_70%)] rounded-3xl" />
+              <div className="absolute -inset-4 bg-[radial-gradient(ellipse_at_center,rgba(201,168,76,0.1),transparent_70%)] rounded-3xl" />
 
-              {/* Portrait container — natural aspect ratio, no cropping */}
+              {/* Photo container — tall aspect ratio, object-top so heads are always visible */}
               <div className="relative w-full max-w-sm lg:max-w-md xl:max-w-lg rounded-2xl overflow-hidden border border-[#C9A84C]/20 shadow-2xl shadow-[#0A0F1E]">
-                <Image
-                  src="/images/coach-tim-portrait.webp"
-                  alt="Coach Tim Brielmaier — RSPA & IPTPA certified tennis and pickleball instructor, Space Coast Florida"
-                  width={600}
-                  height={800}
-                  priority
-                  className="w-full h-auto object-contain"
-                  style={{ display: "block" }}
-                />
-                {/* Bottom gradient with cert badges */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0F1E]/90 via-[#0A0F1E]/40 to-transparent pt-16 pb-4 px-4">
-                  <div className="flex gap-2 flex-wrap">
-                    <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2.5 py-1 rounded font-bold">RSPA Certified</span>
-                    <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2.5 py-1 rounded font-bold">IPTPA Certified</span>
-                    <span className="text-xs font-mono tracking-wider uppercase bg-white/10 text-[#F5F0E8]/80 px-2.5 py-1 rounded">40+ Years</span>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={photoIndex}
+                    initial={shouldReduce ? {} : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={shouldReduce ? {} : { opacity: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative"
+                  >
+                    <Image
+                      src={currentPhoto.src}
+                      alt={currentPhoto.alt}
+                      width={600}
+                      height={750}
+                      priority={photoIndex === 0}
+                      className={`w-full h-auto ${currentPhoto.position}`}
+                      style={{ display: "block" }}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Bottom overlay with badges + photo dots */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0A0F1E]/95 via-[#0A0F1E]/50 to-transparent pt-16 pb-4 px-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2.5 py-1 rounded font-bold">RSPA Tennis</span>
+                      <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2.5 py-1 rounded font-bold">IPTPA Pickleball</span>
+                    </div>
+                    {/* Photo dots */}
+                    <div className="flex gap-1.5">
+                      {heroPhotos.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setPhotoIndex(i)}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${i === photoIndex ? "bg-[#C9A84C] w-4" : "bg-white/30"}`}
+                          aria-label={`View photo ${i + 1}`}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
