@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Award, Users, Clock, Zap } from "lucide-react"
 
 export default function SportSplitSection() {
@@ -22,6 +23,23 @@ export default function SportSplitSection() {
           <h2 className="text-4xl lg:text-5xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>
             Choose Your Game
           </h2>
+        </motion.div>
+
+        {/* Clinic photo banner */}
+        <motion.div {...fade(0.05)} className="relative w-full h-56 rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
+          <Image
+            src="/images/coach-tim-clinic.webp"
+            alt="Coach Tim Brielmaier running a tennis clinic on the Space Coast"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1280px) 100vw, 1280px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/80 via-[#0A0F1E]/30 to-transparent" />
+          <div className="absolute inset-0 flex items-center px-8">
+            <p className="text-[#F5F0E8] text-xl font-bold max-w-sm leading-snug" style={{ fontFamily: "var(--font-playfair)" }}>
+              Coach Tim in action — Space Coast, Florida
+            </p>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

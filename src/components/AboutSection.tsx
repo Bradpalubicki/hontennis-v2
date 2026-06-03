@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion"
 import { Award, MapPin, Star } from "lucide-react"
+import Image from "next/image"
 
 const credentials = [
   { year: "40+", title: "Years of Experience", detail: "Coaching tennis players of all ages and skill levels across multiple states and countries." },
@@ -56,6 +57,23 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Left — large quote + bio */}
           <motion.div {...fade(0.1)}>
+            {/* Tim's portrait */}
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/20">
+              <Image
+                src="/images/coach-tim-portrait.webp"
+                alt="Coach Tim Brielmaier — tennis and pickleball instructor, Space Coast Florida"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="flex gap-2">
+                  <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C]/90 text-[#0A0F1E] px-2 py-1 rounded font-bold">RSPA Certified</span>
+                  <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F]/90 text-white px-2 py-1 rounded font-bold">IPTPA Certified</span>
+                </div>
+              </div>
+            </div>
             <blockquote className="text-3xl lg:text-4xl font-bold text-[#F5F0E8] leading-tight mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
               <span className="text-[#C9A84C] text-6xl leading-none">&ldquo;</span>
               <br />

@@ -2,6 +2,7 @@
 
 import { useReducedMotion, motion } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { Phone, ChevronDown } from "lucide-react"
 
@@ -49,27 +50,26 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden">
-      {/* Background — dark navy with court texture overlay */}
-      <div className="absolute inset-0 bg-[#0A0F1E]" />
+      {/* Hero background photo — Tim coaching on court */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/coach-tim-junior.webp"
+          alt="Coach Tim Brielmaier giving a tennis lesson on a Florida court"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Dark overlay — preserves readability + brand feel */}
+        <div className="absolute inset-0 bg-[#0A0F1E]/75" />
+        {/* Gold gradient from bottom — feeds into stats strip */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] via-[#0A0F1E]/20 to-transparent" />
+        {/* Left vignette — pushes eye to text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/60 via-transparent to-transparent" />
+      </div>
 
-      {/* Subtle radial glow from center-top */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(201,168,76,0.12),transparent)]" />
-
-      {/* Court lines pattern — subtle geometric */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(201,168,76,1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px)
-          `,
-          backgroundSize: "80px 80px",
-        }}
-      />
-
-      {/* Right-side accent glow */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#C9A84C]/5 rounded-full blur-3xl" />
-      <div className="absolute left-0 bottom-1/4 w-64 h-64 bg-[#2D6A4F]/8 rounded-full blur-3xl" />
+      {/* Subtle gold glow overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_30%_50%,rgba(201,168,76,0.06),transparent)]" />
 
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center">
