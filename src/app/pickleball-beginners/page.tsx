@@ -22,7 +22,7 @@ export default function PickleballBeginnersPage() {
   return (
     <>
       <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
-        <Image src="/images/pickleball-action.webp" alt="Pickleball beginners learning the game" fill priority className="object-cover object-top" sizes="100vw" />
+        <Image src="/images/pickleball-players.webp" alt="Pickleball beginners learning the game" fill priority className="object-cover object-top" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
       </div>
       <PageHero

@@ -38,7 +38,7 @@ export default function TennisVsPickleballPage() {
 
       <article className="bg-[#0A0F1E]">
         <div className="relative h-64 w-full overflow-hidden">
-          <Image src="/images/kiwi-pickleball.jpg" alt="Pickleball paddle and ball on a colorful Florida court" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/images/pickleball-players.webp" alt="Pickleball paddle and ball on a colorful Florida court" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
         </div>
 
