@@ -34,14 +34,9 @@ export default function PhilosophySection() {
   return (
     <section className="py-24 bg-[#050810] section-divider">
       {/* Full-width photo banner above section */}
-      <div className="relative w-full h-48 mb-16 overflow-hidden">
-        <Image
-          src="/images/tennis-court-wide.webp"
-          alt="Tennis court — Space Coast Florida"
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+      <div className="relative w-full mb-16 overflow-hidden">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/tennis-court-wide.webp" alt="Tennis court — Space Coast Florida" className="w-full h-auto block" />
         <div className="absolute inset-0 bg-[#050810]/70" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050810] via-transparent to-[#050810]" />
       </div>

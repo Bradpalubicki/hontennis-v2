@@ -25,16 +25,15 @@ export default function SportSplitSection() {
           </h2>
         </motion.div>
 
-        {/* Clinic photo banner — object-top ensures heads always visible */}
-        <motion.div {...fade(0.05)} className="relative w-full h-64 rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
-          <Image
+        {/* Clinic photo banner — natural height, no crop */}
+        <motion.div {...fade(0.05)} className="relative w-full rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/tim-with-ladies.jpg"
             alt="Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida"
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="w-full h-auto block"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/70 via-[#0A0F1E]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/60 via-[#0A0F1E]/10 to-transparent" />
           <div className="absolute bottom-4 left-6">
             <p className="text-[#F5F0E8] text-lg font-bold leading-snug" style={{ fontFamily: "var(--font-playfair)" }}>
               Coach Tim with students — Space Coast, Florida
