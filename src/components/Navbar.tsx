@@ -9,9 +9,12 @@ const navLinks = [
   { href: "/tennis-lessons", label: "Tennis" },
   { href: "/pickleball-lessons", label: "Pickleball" },
   { href: "/services", label: "Services" },
+  { href: "/education", label: "Learn" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ]
+
+const SQUARE_BOOKING_URL = process.env.NEXT_PUBLIC_SQUARE_BOOKING_URL
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -75,12 +78,23 @@ export default function Navbar() {
                 <span className="text-[#F5F0E8]/60 text-xs">Google Reviews</span>
               </div>
 
+              {/* Book button — goes to Square when configured, else scrolls to #book */}
               <a
-                href="sms:+14142326840"
+                href={SQUARE_BOOKING_URL || "/#book"}
+                target={SQUARE_BOOKING_URL ? "_blank" : undefined}
+                rel={SQUARE_BOOKING_URL ? "noopener noreferrer" : undefined}
                 className="flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#0A0F1E] font-semibold text-sm px-4 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25"
               >
+                Book a Lesson
+              </a>
+              {/* Tim's number always visible */}
+              <a
+                href="sms:+14142326840?body=Hi Tim, I have a question about lessons!"
+                className="flex items-center gap-2 text-[#F5F0E8]/60 hover:text-[#C9A84C] text-sm transition-colors"
+                title="Text Tim"
+              >
                 <Phone className="w-3.5 h-3.5" />
-                Text Tim
+                <span className="hidden xl:inline">(414) 232-6840</span>
               </a>
             </div>
 

@@ -1,23 +1,23 @@
 import type { Metadata } from "next"
 import PageHero from "@/components/PageHero"
+import BookingSection from "@/components/BookingSection"
 import ContactSection from "@/components/ContactSection"
 
 export const metadata: Metadata = {
-  title: "Contact | HON Tennis — Coach Tim Brielmaier",
-  description: "Book a tennis or pickleball lesson with Coach Tim Brielmaier. Text, call, or email — Tim responds within 1 business day. Serving Melbourne, Palm Bay, Viera, and all of Florida's Space Coast.",
+  title: "Book a Lesson | HON Tennis — Coach Tim Brielmaier",
+  description: "Book a tennis or pickleball lesson with Coach Tim Brielmaier online via Square, or call/text Tim directly at (414) 232-6840. Serving Melbourne, Palm Bay, Viera, and all of Florida's Space Coast.",
 }
 
 export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Get in Touch"
+        eyebrow="Schedule Online or Call Directly"
         title="Book a Lesson with"
         titleAccent="Coach Tim"
-        subtitle="Text is fastest. Tim responds to every message personally — no bots, no booking software. Just a coach who wants to help you play better."
-        ctaText="Text Tim Now — (414) 232-6840"
-        ctaHref="sms:+14142326840?body=Hi Tim, I'd like to book a lesson!"
+        subtitle="Book online through Square — instant confirmation sent to your phone. Or call/text Tim directly at (414) 232-6840 for questions. He responds same day."
       />
+      <BookingSection />
       <ContactSection />
     </>
   )
