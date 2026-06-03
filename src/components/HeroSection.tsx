@@ -70,7 +70,7 @@ export default function HeroSection() {
                 initial={shouldReduce ? {} : { opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex flex-wrap gap-2 mb-7"
+                className="flex flex-wrap gap-2 mb-4"
               >
                 <span className="text-xs font-mono tracking-widest uppercase bg-[#C9A84C]/10 border border-[#C9A84C]/30 text-[#C9A84C] px-3 py-1.5 rounded-full">
                   🎾 Tennis
@@ -81,6 +81,21 @@ export default function HeroSection() {
                 <span className="text-xs font-mono tracking-widest uppercase bg-white/5 border border-white/10 text-[#F5F0E8]/50 px-3 py-1.5 rounded-full">
                   📍 Space Coast, FL
                 </span>
+              </motion.div>
+
+              {/* Google Reviews trust signal */}
+              <motion.div
+                initial={shouldReduce ? {} : { opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.18 }}
+                className="flex items-center gap-2 mb-7"
+              >
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 text-[#C9A84C] fill-[#C9A84C]" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                  ))}
+                </div>
+                <span className="text-[#F5F0E8]/60 text-xs font-mono">5.0 · Google Reviews</span>
               </motion.div>
 
               {/* Headline */}

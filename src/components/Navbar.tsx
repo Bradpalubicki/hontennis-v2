@@ -4,8 +4,6 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
-import TextSizeToggle from "@/components/TextSizeToggle"
-
 const navLinks = [
   { href: "/tennis-lessons", label: "Tennis" },
   { href: "/pickleball-lessons", label: "Pickleball" },
@@ -68,16 +66,22 @@ export default function Navbar() {
               ))}
             </nav>
 
-            {/* Right side */}
-            <div className="hidden lg:flex items-center gap-3 shrink-0">
-              <TextSizeToggle />
+            {/* Right side — stacked Book + Phone */}
+            <div className="hidden lg:flex flex-col items-end gap-1 shrink-0">
               <a
                 href={SQUARE_BOOKING_URL || "/#book"}
                 target={SQUARE_BOOKING_URL ? "_blank" : undefined}
                 rel={SQUARE_BOOKING_URL ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#0A0F1E] font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25"
+                className="flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#0A0F1E] font-bold text-sm px-5 py-2 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#C9A84C]/25 whitespace-nowrap"
               >
                 Book a Lesson
+              </a>
+              <a
+                href="sms:+14142326840?body=Hi Tim, I have a question!"
+                className="flex items-center gap-1 text-[#F5F0E8]/45 hover:text-[#C9A84C] text-xs transition-colors font-mono whitespace-nowrap"
+              >
+                <Phone className="w-3 h-3" />
+                (414) 232-6840
               </a>
             </div>
 
