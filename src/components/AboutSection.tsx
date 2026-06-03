@@ -54,17 +54,16 @@ export default function AboutSection() {
         </motion.div>
 
         {/* Bio + Credentials */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
-          {/* Left — large quote + bio */}
-          <motion.div {...fade(0.1)}>
-            {/* Coach Tim portrait */}
-            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start mb-20">
+          {/* Col 1 — portrait photo */}
+          <motion.div {...fade(0.1)} className="lg:col-span-1">
+            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-[#C9A84C]/20">
               <Image
                 src="/images/coach-tim-portrait.webp"
                 alt="Coach Tim Brielmaier — HON Tennis, Space Coast Florida"
                 fill
                 className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 33vw"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/70 via-transparent to-transparent" />
@@ -76,24 +75,27 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
-            <blockquote className="text-3xl lg:text-4xl font-bold text-[#F5F0E8] leading-tight mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
-              <span className="text-[#C9A84C] text-6xl leading-none">&ldquo;</span>
+          </motion.div>
+
+          {/* Col 2 — quote + bio */}
+          <motion.div {...fade(0.15)} className="lg:col-span-1 flex flex-col justify-center">
+            <blockquote className="text-2xl lg:text-3xl font-bold text-[#F5F0E8] leading-tight mb-6" style={{ fontFamily: "var(--font-playfair)" }}>
+              <span className="text-[#C9A84C] text-5xl leading-none">&ldquo;</span>
               <br />
               I meet you where you are — in skill, in location, in life.
-              <span className="text-[#C9A84C] text-6xl leading-none">&rdquo;</span>
+              <span className="text-[#C9A84C] text-5xl leading-none">&rdquo;</span>
             </blockquote>
-            <p className="text-[#F5F0E8]/60 leading-relaxed mb-6 text-lg">
+            <p className="text-[#F5F0E8]/60 leading-relaxed mb-5">
               Coach Tim Brielmaier has spent over four decades doing one thing: making players better. From elite club environments in Hong Kong and Florida to community courts across the Space Coast, Tim brings the same philosophy to every lesson — fundamentals first, patience always, results guaranteed.
             </p>
-            <p className="text-[#F5F0E8]/60 leading-relaxed text-lg">
+            <p className="text-[#F5F0E8]/60 leading-relaxed">
               As a mobile coach, Tim comes to you. Your court, your schedule, your pace. No facility memberships, no commute. Just world-class coaching at the court you already use.
             </p>
-            <div className="flex items-center gap-2 mt-6">
+            <div className="flex items-center gap-2 mt-5">
               <MapPin className="w-4 h-4 text-[#C9A84C]" />
               <span className="text-[#F5F0E8]/50 text-sm">Space Coast & Treasure Coast, Florida</span>
             </div>
-            {/* Cert badges */}
-            <div className="flex gap-3 mt-6 flex-wrap">
+            <div className="flex gap-3 mt-5 flex-wrap">
               <div className="flex items-center gap-2 border border-[#C9A84C]/30 rounded-full px-4 py-2">
                 <Award className="w-4 h-4 text-[#C9A84C]" />
                 <span className="text-[#C9A84C] text-sm font-semibold">RSPA Certified</span>
@@ -105,7 +107,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
 
-          {/* Right — credential timeline */}
+          {/* Col 3 — credential timeline */}
           <motion.div {...fade(0.2)} className="space-y-4">
             {credentials.map((cred, i) => (
               <motion.div
