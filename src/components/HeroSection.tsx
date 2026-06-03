@@ -45,7 +45,6 @@ export default function HeroSection() {
     return () => observer.disconnect()
   }, [])
 
-  const currentPhoto = heroPhotos[photoIndex]
 
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0A0F1E]">
