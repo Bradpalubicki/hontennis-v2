@@ -31,7 +31,7 @@ export default function PageHeroPhoto({
   const shouldReduce = useReducedMotion()
 
   return (
-    <section className="relative flex items-end overflow-hidden" style={{ minHeight: "100vh" }}>
+    <section className="relative flex items-end overflow-hidden" style={{ minHeight: "100svh" }}>
       {/* Full-bleed background photo — covers entire hero */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

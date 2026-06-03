@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <div className="relative h-[45vh] min-h-[280px] w-full overflow-hidden">
+      <div className="relative h-[45vh] min-h-[320px] w-full overflow-hidden pt-20 lg:pt-24">
         <Image src="/images/coach-tim-clinic.webp" alt="Coach Tim Brielmaier on court" fill priority className="object-cover object-top" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
       </div>
