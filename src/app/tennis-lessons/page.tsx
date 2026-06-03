@@ -132,14 +132,14 @@ export default function TennisLessonsPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { src: "/images/kids-tennis-toddler.jpg", alt: "Toddler learning tennis — Space Coast youth lessons" },
-              { src: "/images/kids-tennis-girl.jpg", alt: "Junior girl playing tennis — youth coaching Florida" },
-              { src: "/images/kids-tennis-boy.jpg", alt: "Young boy hitting tennis ball — kids tennis lessons Space Coast" },
-              { src: "/images/kids-tennis-girl-red.jpg", alt: "Junior tennis player on clay court — Florida youth tennis" },
+              { src: "/images/kids-tennis-toddler.jpg", alt: "Toddler learning tennis — Space Coast youth lessons", position: "object-top" },
+              { src: "/images/kids-tennis-girl.jpg", alt: "Junior girl playing tennis — youth coaching Florida", position: "object-top" },
+              { src: "/images/kids-tennis-boy.jpg", alt: "Young boy hitting tennis ball — kids tennis lessons Space Coast", position: "object-center" },
+              { src: "/images/kids-tennis-girl-red.jpg", alt: "Junior tennis player on clay court — Florida youth tennis", position: "object-top" },
             ].map((photo, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-[#C9A84C]/15 aspect-square relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
+                <img src={photo.src} alt={photo.alt} className={`w-full h-full object-cover ${photo.position} hover:scale-105 transition-transform duration-500`} />
               </div>
             ))}
           </div>

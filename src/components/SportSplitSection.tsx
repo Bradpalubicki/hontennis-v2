@@ -25,13 +25,13 @@ export default function SportSplitSection() {
           </h2>
         </motion.div>
 
-        {/* Clinic photo banner — natural height, no crop */}
-        <motion.div {...fade(0.05)} className="relative w-full rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
+        {/* Clinic photo banner — constrained height */}
+        <motion.div {...fade(0.05)} className="relative w-full rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15" style={{ height: '420px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/kiwi-courts.jpg"
             alt="Tennis player at Kiwi Racquet and Fitness Club — Indian Harbour Beach, Space Coast Florida"
-            className="w-full h-auto block"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%' }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A0F1E]/65 via-[#0A0F1E]/15 to-transparent" />
           <div className="absolute bottom-4 left-6">

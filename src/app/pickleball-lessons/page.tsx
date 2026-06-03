@@ -26,7 +26,7 @@ export default function PickleballLessonsPage() {
   return (
     <>
       <PageHeroPhoto
-        image="/images/pickleball-action.webp"
+        image="/images/pickleball-players.webp"
         alt="Pickleball players in action — Space Coast Florida"
         eyebrow="Pickleball Instruction · IPTPA Certified · Florida's #1 Sport"
         title="Pickleball Coaching for"

@@ -22,6 +22,7 @@ export default function ServicesPage() {
         ctaHref="sms:+14142326840?body=Hi Tim, I'd like to book a session!"
         ctaSecondaryText="Call Tim — (414) 232-6840"
         ctaSecondaryHref="tel:+14142326840"
+        objectPosition="center 20%"
       />
 
       <ServicesSection />

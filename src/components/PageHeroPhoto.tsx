@@ -14,6 +14,7 @@ interface PageHeroPhotoProps {
   ctaHref?: string
   ctaSecondaryText?: string
   ctaSecondaryHref?: string
+  objectPosition?: string
 }
 
 export default function PageHeroPhoto({
@@ -27,6 +28,7 @@ export default function PageHeroPhoto({
   ctaHref,
   ctaSecondaryText,
   ctaSecondaryHref,
+  objectPosition = "center top",
 }: PageHeroPhotoProps) {
   const shouldReduce = useReducedMotion()
 
@@ -43,19 +45,22 @@ export default function PageHeroPhoto({
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          objectPosition: "center top",
+          objectPosition: objectPosition,
           zIndex: 0,
         }}
       />
 
       {/* Dark overlay — readable but photo clearly visible */}
-      <div style={{ position: "absolute", inset: 0, background: "rgba(10,15,30,0.6)", zIndex: 1 }} />
+      <div style={{ position: "absolute", inset: 0, background: "rgba(10,15,30,0.7)", zIndex: 1 }} />
+
+      {/* Directional gradient — darkens left (text side), reveals photo on right */}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(10,15,30,0.85) 0%, rgba(10,15,30,0.4) 60%, transparent 100%)", zIndex: 2 }} />
 
       {/* Bottom fade — merges into page below */}
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0A0F1E 0%, rgba(10,15,30,0.2) 35%, transparent 100%)", zIndex: 2 }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0A0F1E 0%, rgba(10,15,30,0.2) 35%, transparent 100%)", zIndex: 3 }} />
 
       {/* Content — vertically centered, clears navbar */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16" style={{ zIndex: 3 }}>
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16" style={{ zIndex: 4 }}>
         <motion.p
           initial={shouldReduce ? {} : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

@@ -134,15 +134,7 @@ export default function AboutSection() {
         </div>
 
         {/* Testimonials */}
-        {/* Florida court atmosphere photo banner */}
-        <div className="relative w-full rounded-2xl overflow-hidden mb-12 border border-[#C9A84C]/10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/tim-action-1.jpg" alt="Florida tennis courts — Space Coast" className="w-full h-auto block" />
-          <div className="absolute inset-0 bg-[#0A0F1E]/60" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-[#C9A84C] font-mono text-xs tracking-widest uppercase">Tim&apos;s courts — Space Coast, Florida</p>
-          </div>
-        </div>
+        <div className="border-t border-[#C9A84C]/15 mb-12" />
 
         <motion.div {...fade(0.15)}>
           <div className="text-center mb-10">
