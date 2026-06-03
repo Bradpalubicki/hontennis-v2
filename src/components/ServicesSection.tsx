@@ -112,10 +112,11 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {services.map((service, i) => (
-            <motion.div
+            <motion.a
               key={service.title}
+              href="#contact"
               {...fade(0.05 * i)}
-              className="relative rounded-xl border border-[#C9A84C]/15 bg-[#1A2744] p-6 hover:border-[#C9A84C]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#C9A84C]/5 flex flex-col"
+              className="relative rounded-xl border border-[#C9A84C]/15 bg-[#1A2744] p-6 hover:border-[#C9A84C]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#C9A84C]/8 flex flex-col cursor-pointer group"
             >
               {/* Top border accent */}
               <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" />
@@ -149,16 +150,18 @@ export default function ServicesSection() {
                 {service.description}
               </p>
 
-              <div className="flex items-end justify-between pt-4 border-t border-[#C9A84C]/10">
+              <div className="flex items-end justify-between pt-4 border-t border-[#C9A84C]/10 mt-auto">
                 <div>
                   <span className="text-2xl font-bold text-[#C9A84C]" style={{ fontFamily: "var(--font-space-mono)" }}>
                     {service.price}
                   </span>
                   <span className="text-sm text-[#F5F0E8]/40">{service.unit}</span>
                 </div>
-                <span className="text-xs text-[#F5F0E8]/30 font-mono">{service.duration}</span>
+                <span className="text-xs text-[#C9A84C]/0 group-hover:text-[#C9A84C]/80 font-mono transition-colors duration-200">
+                  Book this →
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
