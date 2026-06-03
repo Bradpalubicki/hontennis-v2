@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, ArrowRight } from "lucide-react"
 
 const locations = [
@@ -84,18 +85,24 @@ export default function ServiceAreaSection() {
               ))}
             </div>
 
-            {/* Google Maps embed placeholder */}
-            <div className="mt-6 rounded-xl overflow-hidden border border-[#C9A84C]/15 h-48 bg-[#1A2744] flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-8 h-8 text-[#C9A84C]/40 mx-auto mb-2" />
-                <p className="text-[#F5F0E8]/30 text-sm">Space Coast & Treasure Coast, FL</p>
+            {/* Clinic photo */}
+            <div className="mt-6 relative rounded-xl overflow-hidden border border-[#C9A84C]/15 h-48">
+              <Image
+                src="/images/coach-tim-clinic.webp"
+                alt="Coach Tim running a clinic on the Space Coast"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-[#0A0F1E]/50" />
+              <div className="absolute inset-0 flex items-end p-4">
                 <a
-                  href="https://maps.google.com/?q=Melbourne,FL"
+                  href="https://maps.google.com/?q=Melbourne+FL+Tennis+Courts"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[#C9A84C]/60 text-xs hover:text-[#C9A84C] transition-colors mt-1 inline-block"
+                  className="text-[#C9A84C] text-xs font-mono hover:underline flex items-center gap-1"
                 >
-                  View on Google Maps →
+                  <MapPin className="w-3 h-3" /> View courts on Google Maps →
                 </a>
               </div>
             </div>

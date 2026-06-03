@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import PageHero from "@/components/PageHero"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <div className="relative h-[45vh] min-h-[280px] w-full overflow-hidden">
+        <Image src="/images/tennis-equipment.webp" alt="Tennis racquet and equipment" fill priority className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
+      </div>
       <PageHero
         eyebrow="Everything Tim Offers"
         title="Services &"

@@ -28,8 +28,8 @@ export default function SportSplitSection() {
         {/* Clinic photo banner */}
         <motion.div {...fade(0.05)} className="relative w-full h-56 rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/15">
           <Image
-            src="/images/coach-tim-clinic.webp"
-            alt="Coach Tim Brielmaier running a tennis clinic on the Space Coast"
+            src="/images/tim-action-3.jpg"
+            alt="Coach Tim Brielmaier with students on a Florida tennis court"
             fill
             className="object-cover object-center"
             sizes="(max-width: 1280px) 100vw, 1280px"

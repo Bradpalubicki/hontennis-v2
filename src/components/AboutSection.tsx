@@ -57,21 +57,43 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Left — large quote + bio */}
           <motion.div {...fade(0.1)}>
-            {/* Tim's portrait */}
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/20">
+            {/* Tim with students on a Florida court */}
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 border border-[#C9A84C]/20">
               <Image
-                src="/images/coach-tim-portrait.webp"
-                alt="Coach Tim Brielmaier — tennis and pickleball instructor, Space Coast Florida"
+                src="/images/tim-action-3.jpg"
+                alt="Coach Tim Brielmaier with students on a Florida tennis court"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/70 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <div className="flex gap-2">
-                  <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C]/90 text-[#0A0F1E] px-2 py-1 rounded font-bold">RSPA Certified</span>
-                  <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F]/90 text-white px-2 py-1 rounded font-bold">IPTPA Certified</span>
+                <div className="flex gap-2 flex-wrap">
+                  <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2 py-1 rounded font-bold">RSPA Certified</span>
+                  <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2 py-1 rounded font-bold">IPTPA Certified</span>
+                  <span className="text-xs font-mono tracking-wider uppercase bg-white/20 text-white px-2 py-1 rounded">40+ Years</span>
                 </div>
+              </div>
+            </div>
+            {/* Two smaller photos side by side */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              <div className="relative aspect-square rounded-xl overflow-hidden border border-[#C9A84C]/15">
+                <Image
+                  src="/images/coach-tim-portrait.webp"
+                  alt="Coach Tim Brielmaier"
+                  fill
+                  className="object-cover object-top"
+                  sizes="25vw"
+                />
+              </div>
+              <div className="relative aspect-square rounded-xl overflow-hidden border border-[#C9A84C]/15">
+                <Image
+                  src="/images/tim-action-2.jpg"
+                  alt="Coach Tim Brielmaier ready to coach"
+                  fill
+                  className="object-cover object-top"
+                  sizes="25vw"
+                />
               </div>
             </div>
             <blockquote className="text-3xl lg:text-4xl font-bold text-[#F5F0E8] leading-tight mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
@@ -130,6 +152,21 @@ export default function AboutSection() {
         </div>
 
         {/* Testimonials */}
+        {/* Florida court atmosphere photo banner */}
+        <div className="relative w-full h-40 rounded-2xl overflow-hidden mb-12 border border-[#C9A84C]/10">
+          <Image
+            src="/images/tim-action-1.jpg"
+            alt="Florida tennis courts — Space Coast"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[#0A0F1E]/60" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-[#C9A84C] font-mono text-xs tracking-widest uppercase">Tim&apos;s courts — Space Coast, Florida</p>
+          </div>
+        </div>
+
         <motion.div {...fade(0.15)}>
           <div className="text-center mb-10">
             <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-2">What Students Say</p>

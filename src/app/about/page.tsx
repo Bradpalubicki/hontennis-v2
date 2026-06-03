@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import PageHero from "@/components/PageHero"
 import AboutSection from "@/components/AboutSection"
 import ContactSection from "@/components/ContactSection"
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <div className="relative h-[45vh] min-h-[280px] w-full overflow-hidden">
+        <Image src="/images/coach-tim-clinic.webp" alt="Coach Tim Brielmaier on court" fill priority className="object-cover object-top" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
+      </div>
       <PageHero
         eyebrow="40+ Years · RSPA · IPTPA · Former Director of Tennis"
         title="Meet Coach"

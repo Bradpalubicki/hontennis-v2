@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import PageHero from "@/components/PageHero"
 import ContactSection from "@/components/ContactSection"
 import { Award, TrendingUp, Users, Zap } from "lucide-react"
@@ -45,6 +46,10 @@ const levels = [
 export default function PickleballLessonsPage() {
   return (
     <>
+      <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
+        <Image src="/images/pickleball-court.webp" alt="Pickleball court — Florida" fill priority className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
+      </div>
       <PageHero
         eyebrow="Pickleball Instruction · IPTPA Certified · Florida's #1 Sport"
         title="Pickleball Coaching for"

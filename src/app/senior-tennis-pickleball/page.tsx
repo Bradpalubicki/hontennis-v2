@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import PageHero from "@/components/PageHero"
 import ContactSection from "@/components/ContactSection"
 import { Heart, Shield, Activity, Users } from "lucide-react"
@@ -53,6 +54,10 @@ const faqs = [
 export default function SeniorPage() {
   return (
     <>
+      <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
+        <Image src="/images/senior-tennis.webp" alt="Senior tennis players — Space Coast Florida" fill priority className="object-cover object-center" sizes="100vw" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
+      </div>
       <PageHero
         eyebrow="Senior & Longevity Coaching · All Ages Welcome"
         title="Tennis & Pickleball Coaching"

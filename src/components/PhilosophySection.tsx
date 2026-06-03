@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
+import Image from "next/image"
 
 const pillars = [
   {
@@ -32,6 +33,19 @@ export default function PhilosophySection() {
 
   return (
     <section className="py-24 bg-[#050810] section-divider">
+      {/* Full-width photo banner above section */}
+      <div className="relative w-full h-48 mb-16 overflow-hidden">
+        <Image
+          src="/images/tennis-court-wide.webp"
+          alt="Tennis court — Space Coast Florida"
+          fill
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-[#050810]/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050810] via-transparent to-[#050810]" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left — HON character */}
