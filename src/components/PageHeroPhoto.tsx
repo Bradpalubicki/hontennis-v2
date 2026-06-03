@@ -1,7 +1,6 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
-import Link from "next/link"
 import { Phone } from "lucide-react"
 
 interface PageHeroPhotoProps {
@@ -15,7 +14,6 @@ interface PageHeroPhotoProps {
   ctaHref?: string
   ctaSecondaryText?: string
   ctaSecondaryHref?: string
-  overlayOpacity?: string
 }
 
 export default function PageHeroPhoto({
@@ -29,29 +27,35 @@ export default function PageHeroPhoto({
   ctaHref,
   ctaSecondaryText,
   ctaSecondaryHref,
-  overlayOpacity = "bg-[#0A0F1E]/65",
 }: PageHeroPhotoProps) {
   const shouldReduce = useReducedMotion()
 
   return (
-    <section className="relative min-h-[60vh] flex items-end overflow-hidden">
-      {/* Full-bleed background photo */}
+    <section className="relative flex items-end overflow-hidden" style={{ minHeight: "100vh" }}>
+      {/* Full-bleed background photo — covers entire hero */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={image}
         alt={alt}
-        className="absolute inset-0 w-full h-full object-cover object-top"
-        style={{ zIndex: 0 }}
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center top",
+          zIndex: 0,
+        }}
       />
 
-      {/* Dark overlay */}
-      <div className={`absolute inset-0 ${overlayOpacity}`} style={{ zIndex: 1 }} />
+      {/* Dark overlay — readable but photo clearly visible */}
+      <div style={{ position: "absolute", inset: 0, background: "rgba(10,15,30,0.55)", zIndex: 1 }} />
 
-      {/* Bottom gradient — blends into page */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E] via-[#0A0F1E]/30 to-transparent" style={{ zIndex: 2 }} />
+      {/* Bottom fade — merges into page below */}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0A0F1E 0%, rgba(10,15,30,0.2) 40%, transparent 100%)", zIndex: 2 }} />
 
-      {/* Content — sits at bottom of hero */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-14" style={{ zIndex: 3 }}>
+      {/* Content — anchored to bottom of hero */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32" style={{ zIndex: 3 }}>
         <motion.p
           initial={shouldReduce ? {} : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

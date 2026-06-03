@@ -32,7 +32,7 @@ const articles = [
     excerpt: "Both sports are thriving in Florida. A certified coach breaks down the key differences, who should start with which sport, and how they complement each other.",
     category: "Getting Started",
     readTime: "7 min read",
-    image: "/images/pickleball-court.webp",
+    image: "/images/kiwi-pickleball.jpg",
     intent: "Informational",
   },
   {
@@ -68,7 +68,7 @@ const articles = [
     excerpt: "Why tennis and pickleball are among the best sports for players 55+, what the research says about health outcomes, and how to get started safely at any age.",
     category: "Senior Sports",
     readTime: "7 min read",
-    image: "/images/senior-tennis.webp",
+    image: "/images/kiwi-courts.jpg",
     intent: "Informational",
   },
 ]
