@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import PageHero from "@/components/PageHero"
+import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ContactSection from "@/components/ContactSection"
 import { Award, TrendingUp, Users, Zap } from "lucide-react"
 
@@ -17,46 +16,26 @@ const whyTennisBackground = [
 ]
 
 const levels = [
-  {
-    level: "Beginner",
-    desc: "Never held a paddle? Tim starts from zero — rules, scoring, grip, serve, and the fundamental strokes. Florida's #1-ranked pickleball market means there's always a game to join once you have the basics.",
-    price: "$80/hr private · $20/person clinic",
-    link: "/pickleball-beginners",
-  },
-  {
-    level: "Intermediate",
-    desc: "You know the basics but want to play smarter. Tim works on the third-shot drop, dinking consistency, stacking, and reading your opponents — the shots that win recreational games.",
-    price: "$80/hr private · $20/person clinic",
-    link: null,
-  },
-  {
-    level: "Advanced & Competitive",
-    desc: "Tournament prep, strategy refinement, and film analysis. Tim's competitive tennis background brings a level of tactical depth most pickleball-only coaches can't match.",
-    price: "$80/hr private",
-    link: null,
-  },
-  {
-    level: "Senior Players",
-    desc: "Pickleball is the perfect lifelong sport — Tim's senior specialty means lessons that prioritize sustainable movement, injury prevention, and maximizing enjoyment at every age.",
-    price: "$80/hr private · $20/person clinic",
-    link: "/senior-tennis-pickleball",
-  },
+  { level: "Beginner", desc: "Never held a paddle? Tim starts from zero — rules, scoring, grip, serve, and the fundamental strokes.", price: "$80/hr private · $20/person clinic", link: "/pickleball-beginners" },
+  { level: "Intermediate", desc: "You know the basics but want to play smarter. Tim works on the third-shot drop, dinking consistency, stacking, and reading your opponents.", price: "$80/hr private · $20/person clinic", link: null },
+  { level: "Advanced & Competitive", desc: "Tournament prep, strategy refinement, and film analysis. Tim's competitive tennis background brings tactical depth most pickleball-only coaches can't match.", price: "$80/hr private", link: null },
+  { level: "Senior Players", desc: "Pickleball is the perfect lifelong sport — Tim's senior specialty means lessons that prioritize sustainable movement, injury prevention, and maximizing enjoyment at every age.", price: "$80/hr private · $20/person clinic", link: "/senior-tennis-pickleball" },
 ]
 
 export default function PickleballLessonsPage() {
   return (
     <>
-      <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
-        <Image src="/images/pickleball-action.webp" alt="Pickleball players in action — Space Coast Florida" fill priority className="object-cover object-top" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
-      </div>
-      <PageHero
+      <PageHeroPhoto
+        image="/images/pickleball-action.webp"
+        alt="Pickleball players in action — Space Coast Florida"
         eyebrow="Pickleball Instruction · IPTPA Certified · Florida's #1 Sport"
         title="Pickleball Coaching for"
         titleAccent="Every Level"
         subtitle="IPTPA certified and tennis-trained — Coach Tim's background in tennis fundamentals accelerates your pickleball improvement faster than coaching from pickleball-only instructors."
         ctaText="Book a Pickleball Lesson"
         ctaHref="sms:+14142326840?body=Hi Tim, I'd like to book a pickleball lesson!"
+        ctaSecondaryText="Call Tim — (414) 232-6840"
+        ctaSecondaryHref="tel:+14142326840"
       />
 
       {/* Market context banner */}
@@ -122,11 +101,7 @@ export default function PickleballLessonsPage() {
                 </div>
                 <p className="text-[#F5F0E8]/60 leading-relaxed mb-4">{l.desc}</p>
                 <p className="text-xs text-[#C9A84C]/70 font-mono mb-3">{l.price}</p>
-                {l.link && (
-                  <a href={l.link} className="text-sm text-[#6FCF97] hover:text-[#6FCF97]/80 transition-colors">
-                    Learn more →
-                  </a>
-                )}
+                {l.link && <a href={l.link} className="text-sm text-[#6FCF97] hover:underline">Learn more →</a>}
               </div>
             ))}
           </div>
@@ -137,27 +112,19 @@ export default function PickleballLessonsPage() {
       <section className="py-16 bg-[#0A0F1E] border-t border-[#C9A84C]/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex items-center gap-3 border border-[#6FCF97]/30 rounded-full px-6 py-3">
-              <Award className="w-5 h-5 text-[#6FCF97]" />
-              <div className="text-left">
-                <p className="text-[#F5F0E8] font-semibold text-sm">IPTPA Certified</p>
-                <p className="text-[#F5F0E8]/40 text-xs">International Pickleball Teaching Professional</p>
+            {[
+              { cert: "IPTPA Certified", sub: "International Pickleball Teaching Professional", color: "text-[#6FCF97]", border: "border-[#6FCF97]/30" },
+              { cert: "RSPA Certified Tennis", sub: "Foundation in racquet sport fundamentals", color: "text-[#C9A84C]", border: "border-[#C9A84C]/30" },
+              { cert: "40+ Years Coaching", sub: "Multi-sport, multi-level, international experience", color: "text-[#C9A84C]", border: "border-[#C9A84C]/30" },
+            ].map((c) => (
+              <div key={c.cert} className={`flex items-center gap-3 border ${c.border} rounded-full px-6 py-3`}>
+                <Award className={`w-5 h-5 ${c.color}`} />
+                <div className="text-left">
+                  <p className={`font-semibold text-sm ${c.color}`}>{c.cert}</p>
+                  <p className="text-[#F5F0E8]/40 text-xs">{c.sub}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-3 border border-[#C9A84C]/30 rounded-full px-6 py-3">
-              <Award className="w-5 h-5 text-[#C9A84C]" />
-              <div className="text-left">
-                <p className="text-[#F5F0E8] font-semibold text-sm">RSPA Certified Tennis</p>
-                <p className="text-[#F5F0E8]/40 text-xs">Foundation in racquet sport fundamentals</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 border border-[#C9A84C]/30 rounded-full px-6 py-3">
-              <Users className="w-5 h-5 text-[#C9A84C]" />
-              <div className="text-left">
-                <p className="text-[#F5F0E8] font-semibold text-sm">40+ Years Coaching</p>
-                <p className="text-[#F5F0E8]/40 text-xs">Multi-sport, multi-level, international experience</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

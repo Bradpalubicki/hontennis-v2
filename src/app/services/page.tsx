@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import PageHero from "@/components/PageHero"
+import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
 
@@ -12,17 +11,17 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <div className="relative h-[45vh] min-h-[280px] w-full overflow-hidden">
-        <Image src="/images/tennis-equipment.webp" alt="Tennis racquet and equipment" fill priority className="object-cover object-center" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
-      </div>
-      <PageHero
+      <PageHeroPhoto
+        image="/images/tim-with-ladies.jpg"
+        alt="Coach Tim Brielmaier with tennis students on a Florida court"
         eyebrow="Everything Tim Offers"
         title="Services &"
         titleAccent="Pricing"
         subtitle="Private lessons, group sessions, clinics, senior coaching, remote video analysis, racquet stringing, and Har-Tru court maintenance — all delivered at your location across the Space Coast."
         ctaText="Book a Session"
         ctaHref="sms:+14142326840?body=Hi Tim, I'd like to book a session!"
+        ctaSecondaryText="Call Tim — (414) 232-6840"
+        ctaSecondaryHref="tel:+14142326840"
       />
 
       <ServicesSection />
@@ -37,13 +36,7 @@ export default function ServicesPage() {
           <p className="text-[#F5F0E8]/60 leading-relaxed mb-6 text-lg">
             Coach Tim&apos;s professional experience as Director of Tennis extends beyond instruction. He offers Har-Tru (clay) court maintenance services for private clubs, HOAs, and residential facilities across Florida&apos;s Space Coast. Pricing by estimate based on court count and condition.
           </p>
-          <p className="text-[#F5F0E8]/60 leading-relaxed mb-8">
-            Services include surface grooming, line tape, net maintenance, court irrigation systems, and full seasonal preparation. Contact Tim for a free assessment and estimate.
-          </p>
-          <a
-            href="mailto:brielmaiert@gmail.com?subject=Har-Tru Court Maintenance Inquiry"
-            className="inline-flex items-center gap-2 border-2 border-[#C9A84C]/40 hover:border-[#C9A84C] text-[#C9A84C] font-semibold px-6 py-3 rounded-full transition-all duration-200"
-          >
+          <a href="mailto:brielmaiert@gmail.com?subject=Har-Tru Court Maintenance Inquiry" className="inline-flex items-center gap-2 border-2 border-[#C9A84C]/40 hover:border-[#C9A84C] text-[#C9A84C] font-semibold px-6 py-3 rounded-full transition-all duration-200">
             Request a Maintenance Estimate
           </a>
         </div>
@@ -57,7 +50,7 @@ export default function ServicesPage() {
             Racquet Stringing
           </h2>
           <p className="text-[#F5F0E8]/60 leading-relaxed mb-6 text-lg">
-            Professional racquet stringing available for both tennis and pickleball. Bring your own strings for $20 labor, or Tim provides strings starting at $30+ all-in depending on the string type. Fast turnaround — usually same or next day.
+            Professional racquet stringing available for both tennis and pickleball. Bring your own strings for $20 labor, or Tim provides strings starting at $30+ all-in depending on the string type.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             <div className="rounded-xl border border-[#C9A84C]/15 bg-[#1A2744] p-5">
@@ -71,10 +64,7 @@ export default function ServicesPage() {
               <p className="text-[#F5F0E8]/50 text-sm">Tim provides and installs the strings — price varies by string</p>
             </div>
           </div>
-          <a
-            href="sms:+14142326840?body=Hi Tim, I need my racquet restrung!"
-            className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#0A0F1E] font-bold px-6 py-3 rounded-full transition-all duration-200"
-          >
+          <a href="sms:+14142326840?body=Hi Tim, I need my racquet restrung!" className="inline-flex items-center gap-2 bg-[#C9A84C] hover:bg-[#E8C87A] text-[#0A0F1E] font-bold px-6 py-3 rounded-full transition-all duration-200">
             Text Tim About Stringing
           </a>
         </div>

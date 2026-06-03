@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import PageHero from "@/components/PageHero"
+import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
 import { Award, CheckCircle, Clock, Users } from "lucide-react"
@@ -47,25 +46,17 @@ const programs = [
 export default function TennisLessonsPage() {
   return (
     <>
-      {/* Full-bleed photo hero with Tim's junior lesson photo */}
-      <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
-        <Image
-          src="/images/coach-tim-junior.webp"
-          alt="Coach Tim Brielmaier giving a tennis lesson"
-          fill
-          priority
-          className="object-cover object-top"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
-      </div>
-      <PageHero
+      <PageHeroPhoto
+        image="/images/coach-tim-junior.webp"
+        alt="Coach Tim Brielmaier giving a tennis lesson on a Florida court"
         eyebrow="Tennis Instruction · RSPA Certified"
         title="Tennis Lessons That Come to"
         titleAccent="Your Court"
         subtitle="40+ years of coaching experience delivered at your court across Florida's Space Coast. Private, group, hitting lessons, and clinics for all ages and skill levels."
         ctaText="Book a Tennis Lesson"
         ctaHref="sms:+14142326840?body=Hi Tim, I'd like to book a tennis lesson!"
+        ctaSecondaryText="Call Tim — (414) 232-6840"
+        ctaSecondaryHref="tel:+14142326840"
       />
 
       {/* Highlights bar */}
@@ -99,9 +90,7 @@ export default function TennisLessonsPage() {
                   <span className="text-[#C9A84C] font-bold font-mono text-lg shrink-0 ml-4">{p.price}</span>
                 </div>
                 <p className="text-[#F5F0E8]/60 leading-relaxed mb-4">{p.description}</p>
-                <p className="text-xs text-[#C9A84C]/70 font-mono">
-                  Ideal for: {p.ideal}
-                </p>
+                <p className="text-xs text-[#C9A84C]/70 font-mono">Ideal for: {p.ideal}</p>
               </div>
             ))}
           </div>
