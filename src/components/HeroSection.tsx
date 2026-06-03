@@ -16,13 +16,13 @@ const stats = [
 // Rotating hero photos — Tim on real Florida courts, heads fully visible
 const heroPhotos = [
   {
-    src: "/images/tim-with-ladies.jpg",
-    alt: "Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida",
+    src: "/images/tim-at-net.webp",
+    alt: "Coach Tim Brielmaier at the net — tennis court, Space Coast Florida",
     position: "object-top",
   },
   {
-    src: "/images/tim-action-3.jpg",
-    alt: "Coach Tim Brielmaier with group tennis students on a Florida court",
+    src: "/images/tim-with-ladies.jpg",
+    alt: "Coach Tim Brielmaier with students after a tennis lesson — Space Coast, Florida",
     position: "object-top",
   },
 ]
