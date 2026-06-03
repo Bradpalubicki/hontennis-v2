@@ -1,26 +1,97 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-space-mono);
+  --font-heading: var(--font-playfair);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* HON Brand Colors */
+  --color-hon-navy: #0A0F1E;
+  --color-hon-midnight: #1A2744;
+  --color-hon-gold: #C9A84C;
+  --color-hon-gold-light: #E8C87A;
+  --color-hon-cream: #F5F0E8;
+  --color-hon-green: #2D6A4F;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #0A0F1E;
+  --foreground: #F5F0E8;
+  --card: #1A2744;
+  --card-foreground: #F5F0E8;
+  --primary: #C9A84C;
+  --primary-foreground: #0A0F1E;
+  --secondary: #1A2744;
+  --secondary-foreground: #F5F0E8;
+  --muted: #1A2744;
+  --muted-foreground: #9AA3B2;
+  --accent: #C9A84C;
+  --accent-foreground: #0A0F1E;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(201, 168, 76, 0.15);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #C9A84C;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-color: #0A0F1E;
+    color: #F5F0E8;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
+    line-height: 1.2;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8C87A 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold glow utility */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.3), 0 0 60px rgba(201, 168, 76, 0.1);
+}
+
+/* Section divider */
+.section-divider {
+  border-top: 1px solid rgba(201, 168, 76, 0.15);
 }
