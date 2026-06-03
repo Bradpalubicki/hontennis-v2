@@ -57,14 +57,15 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Left — large quote + bio */}
           <motion.div {...fade(0.1)}>
-            {/* Tim with students on a Florida court */}
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 border border-[#C9A84C]/20">
+            {/* Coach Tim portrait */}
+            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden mb-8 border border-[#C9A84C]/20">
               <Image
-                src="/images/tim-with-ladies.jpg"
-                alt="Coach Tim Brielmaier with students after a tennis lesson — Space Coast Florida"
+                src="/images/coach-tim-portrait.webp"
+                alt="Coach Tim Brielmaier — HON Tennis, Space Coast Florida"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/70 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
@@ -73,27 +74,6 @@ export default function AboutSection() {
                   <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2 py-1 rounded font-bold">IPTPA Certified</span>
                   <span className="text-xs font-mono tracking-wider uppercase bg-white/20 text-white px-2 py-1 rounded">40+ Years</span>
                 </div>
-              </div>
-            </div>
-            {/* Two smaller photos side by side */}
-            <div className="grid grid-cols-2 gap-3 mb-8">
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-[#C9A84C]/15">
-                <Image
-                  src="/images/coach-tim-portrait.webp"
-                  alt="Coach Tim Brielmaier"
-                  fill
-                  className="object-cover object-top"
-                  sizes="25vw"
-                />
-              </div>
-              <div className="relative aspect-square rounded-xl overflow-hidden border border-[#C9A84C]/15">
-                <Image
-                  src="/images/tim-action-2.jpg"
-                  alt="Coach Tim Brielmaier ready to coach"
-                  fill
-                  className="object-cover object-top"
-                  sizes="25vw"
-                />
               </div>
             </div>
             <blockquote className="text-3xl lg:text-4xl font-bold text-[#F5F0E8] leading-tight mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
