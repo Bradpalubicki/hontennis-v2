@@ -38,29 +38,50 @@ export default function RSPACertificationPage() {
       <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "Education", href: "/education" }, { label: "RSPA Certification & Choosing a Coach" }]} />
 
       <article className="bg-[#0A0F1E]">
-        <div className="relative h-64 w-full overflow-hidden">
-          <Image src="/images/coach-tim-clinic.webp" alt="RSPA certified tennis coach Tim Brielmaier" fill className="object-cover object-top" sizes="100vw" priority />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
+
+        {/* Two-column intro — text left, Tim portrait right */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — title + byline + quick answer */}
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="text-xs font-mono uppercase tracking-widest bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20 px-2 py-1 rounded">Coaching</span>
+                <span className="text-[#F5F0E8]/30 text-xs font-mono">5 min read · June 2026</span>
+              </div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#F5F0E8] mb-4 leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
+                What Is RSPA Certification? What to Look for in a Tennis Coach
+              </h1>
+              <p className="text-[#F5F0E8]/60 text-lg leading-relaxed mb-8">
+                By <Link href="/about" className="text-[#C9A84C] hover:underline">Coach Tim Brielmaier</Link> · RSPA & IPTPA Certified
+              </p>
+              <div className="rounded-xl border border-[#C9A84C]/30 bg-[#1A2744] p-6">
+                <p className="text-xs font-mono uppercase tracking-widest text-[#C9A84C] mb-2">Quick Answer</p>
+                <p className="text-[#F5F0E8] text-lg font-semibold leading-relaxed">
+                  RSPA (Racquet Sports Professionals Association) certification means a tennis coach has completed professional instructor training — not just played at a high level. For pickleball, IPTPA is the equivalent credential. Always verify certifications before hiring.
+                </p>
+              </div>
+            </div>
+            {/* Right — Tim portrait */}
+            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-[#C9A84C]/20">
+              <Image
+                src="/images/coach-tim-portrait.webp"
+                alt="Coach Tim Brielmaier — RSPA certified tennis instructor, Space Coast Florida"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F1E]/70 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex gap-2 flex-wrap">
+                <span className="text-xs font-mono tracking-wider uppercase bg-[#C9A84C] text-[#0A0F1E] px-2 py-1 rounded font-bold">RSPA Certified</span>
+                <span className="text-xs font-mono tracking-wider uppercase bg-[#2D6A4F] text-white px-2 py-1 rounded font-bold">IPTPA Certified</span>
+                <span className="text-xs font-mono tracking-wider uppercase bg-white/15 text-white px-2 py-1 rounded">40+ Years</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex items-center gap-3 mb-5">
-            <span className="text-xs font-mono uppercase tracking-widest bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20 px-2 py-1 rounded">Coaching</span>
-            <span className="text-[#F5F0E8]/30 text-xs font-mono">5 min read · June 2026</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#F5F0E8] mb-4 leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
-            What Is RSPA Certification? What to Look for in a Tennis Coach
-          </h1>
-          <p className="text-[#F5F0E8]/60 text-lg leading-relaxed mb-8">
-            By <Link href="/about" className="text-[#C9A84C] hover:underline">Coach Tim Brielmaier</Link> · RSPA & IPTPA Certified
-          </p>
-
-          <div className="rounded-xl border border-[#C9A84C]/30 bg-[#1A2744] p-6 mb-10">
-            <p className="text-xs font-mono uppercase tracking-widest text-[#C9A84C] mb-2">Quick Answer</p>
-            <p className="text-[#F5F0E8] text-lg font-semibold leading-relaxed">
-              RSPA (Racquet Sports Professionals Association) certification means a tennis coach has completed professional instructor training — not just played at a high level. For pickleball, IPTPA is the equivalent credential. Always verify certifications before hiring.
-            </p>
-          </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
 
           <div className="space-y-8 text-[#F5F0E8]/70 text-lg leading-relaxed">
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>What RSPA Certification Means</h2>
