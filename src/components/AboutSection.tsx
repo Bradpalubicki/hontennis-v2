@@ -60,8 +60,8 @@ export default function AboutSection() {
             {/* Tim with students on a Florida court */}
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4 border border-[#C9A84C]/20">
               <Image
-                src="/images/tim-action-3.jpg"
-                alt="Coach Tim Brielmaier with students on a Florida tennis court"
+                src="/images/tim-with-ladies.jpg"
+                alt="Coach Tim Brielmaier with students after a tennis lesson — Space Coast Florida"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"

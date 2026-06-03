@@ -50,7 +50,7 @@ const articles = [
     excerpt: "With 24 million players and growing, pickleball coaching demand is exploding. Here's exactly how to find, evaluate, and book a qualified instructor in your area.",
     category: "Finding a Coach",
     readTime: "5 min read",
-    image: "/images/pickleball-action.webp",
+    image: "/images/tennis-coaching-lesson.jpg",
     intent: "Commercial",
   },
   {
@@ -59,7 +59,7 @@ const articles = [
     excerpt: "A local coach's guide to the top courts in Melbourne, Viera, Palm Bay, Rockledge, and across Brevard County — public, HOA, and club facilities.",
     category: "Local Guide",
     readTime: "8 min read",
-    image: "/images/tim-action-1.jpg",
+    image: "/images/pickleball-lady.jpg",
     intent: "Navigational",
   },
   {

@@ -78,6 +78,21 @@
   }
 }
 
+/* Large text mode — for senior/accessibility users */
+html.text-large body {
+  font-size: 20px;
+  line-height: 1.8;
+}
+html.text-large h1 { font-size: 1.15em; }
+html.text-large h2 { font-size: 1.1em; }
+html.text-large p, html.text-large li, html.text-large a {
+  font-size: 1.1em;
+}
+html.text-large button, html.text-large input, html.text-large textarea {
+  font-size: 1.1em;
+  min-height: 56px;
+}
+
 /* Gold gradient text utility */
 .text-gold-gradient {
   background: linear-gradient(135deg, #C9A84C 0%, #E8C87A 50%, #C9A84C 100%);

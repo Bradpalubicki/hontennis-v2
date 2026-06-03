@@ -50,7 +50,7 @@ export default function BestTennisCourtsPage() {
 
       <article className="bg-[#0A0F1E]">
         <div className="relative h-64 w-full overflow-hidden">
-          <Image src="/images/tim-action-1.jpg" alt="Florida tennis courts with palm trees — Space Coast" fill className="object-cover object-top" sizes="100vw" priority />
+          <Image src="/images/pickleball-lady.jpg" alt="Pickleball player on a Florida court — Space Coast" fill className="object-cover object-top" sizes="100vw" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
         </div>
 

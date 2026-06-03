@@ -47,8 +47,8 @@ export default function TennisLessonsPage() {
   return (
     <>
       <PageHeroPhoto
-        image="/images/coach-tim-junior.webp"
-        alt="Coach Tim Brielmaier giving a tennis lesson on a Florida court"
+        image="/images/tennis-coaching-lesson.jpg"
+        alt="Tennis coach giving a lesson to a student on a Florida court"
         eyebrow="Tennis Instruction · RSPA Certified"
         title="Tennis Lessons That Come to"
         titleAccent="Your Court"
@@ -114,6 +114,32 @@ export default function TennisLessonsPage() {
                 <span className="text-3xl font-bold text-[#C9A84C]/20 font-mono">{item.step}</span>
                 <h4 className="text-lg font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>{item.title}</h4>
                 <p className="text-[#F5F0E8]/55 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Kids & junior tennis photo section */}
+      <section className="py-20 bg-[#0A0F1E] border-t border-[#C9A84C]/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">All Ages Welcome</p>
+            <h2 className="text-3xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>
+              From Toddlers to Competitive Juniors
+            </h2>
+            <p className="text-[#F5F0E8]/55 mt-3 max-w-xl mx-auto">Coach Tim works with players of all ages — beginners picking up a racquet for the first time through competitive junior players.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { src: "/images/kids-tennis-toddler.jpg", alt: "Toddler learning tennis — Space Coast youth lessons" },
+              { src: "/images/kids-tennis-girl.jpg", alt: "Junior girl playing tennis — youth coaching Florida" },
+              { src: "/images/kids-tennis-boy.jpg", alt: "Young boy hitting tennis ball — kids tennis lessons Space Coast" },
+              { src: "/images/kids-tennis-girl-red.jpg", alt: "Junior tennis player on clay court — Florida youth tennis" },
+            ].map((photo, i) => (
+              <div key={i} className="rounded-xl overflow-hidden border border-[#C9A84C]/15 aspect-square relative">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
               </div>
             ))}
           </div>

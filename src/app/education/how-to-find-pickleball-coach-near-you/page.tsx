@@ -38,7 +38,7 @@ export default function FindPickleballCoachPage() {
 
       <article className="bg-[#0A0F1E]">
         <div className="relative h-64 w-full overflow-hidden">
-          <Image src="/images/pickleball-action.webp" alt="Pickleball coaching in Florida" fill className="object-cover" sizes="100vw" priority />
+          <Image src="/images/tennis-coaching-lesson.jpg" alt="Tennis coach giving a lesson — Space Coast Florida" fill className="object-cover" sizes="100vw" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/50 via-[#0A0F1E]/20 to-[#0A0F1E]" />
         </div>
 

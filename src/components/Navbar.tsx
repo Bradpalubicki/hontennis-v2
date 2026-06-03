@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, Star, Phone } from "lucide-react"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import TextSizeToggle from "@/components/TextSizeToggle"
 
 const navLinks = [
   { href: "/tennis-lessons", label: "Tennis" },
@@ -68,6 +69,7 @@ export default function Navbar() {
 
             {/* Right side — Google rating + CTA */}
             <div className="hidden lg:flex items-center gap-4">
+              <TextSizeToggle />
               {/* Google Rating badge */}
               <div className="flex items-center gap-1.5 text-sm">
                 <div className="flex">
