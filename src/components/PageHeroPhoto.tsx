@@ -31,7 +31,7 @@ export default function PageHeroPhoto({
   const shouldReduce = useReducedMotion()
 
   return (
-    <section className="relative flex items-end overflow-hidden" style={{ minHeight: "100svh" }}>
+    <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100svh" }}>
       {/* Full-bleed background photo — covers entire hero */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -49,13 +49,13 @@ export default function PageHeroPhoto({
       />
 
       {/* Dark overlay — readable but photo clearly visible */}
-      <div style={{ position: "absolute", inset: 0, background: "rgba(10,15,30,0.55)", zIndex: 1 }} />
+      <div style={{ position: "absolute", inset: 0, background: "rgba(10,15,30,0.6)", zIndex: 1 }} />
 
       {/* Bottom fade — merges into page below */}
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0A0F1E 0%, rgba(10,15,30,0.2) 40%, transparent 100%)", zIndex: 2 }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0A0F1E 0%, rgba(10,15,30,0.2) 35%, transparent 100%)", zIndex: 2 }} />
 
-      {/* Content — anchored to bottom of hero */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-32" style={{ zIndex: 3 }}>
+      {/* Content — vertically centered, clears navbar */}
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16" style={{ zIndex: 3 }}>
         <motion.p
           initial={shouldReduce ? {} : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
