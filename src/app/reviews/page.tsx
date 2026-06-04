@@ -85,7 +85,8 @@ export default function ReviewsPage() {
             ))}
           </div>
           <p className="text-5xl font-bold text-[#C9A84C] font-mono mb-1">5.0</p>
-          <p className="text-[#F5F0E8]/50 text-sm">Based on Google Reviews · Space Coast, FL</p>
+          <p className="text-[#F5F0E8]/70 text-base font-semibold mb-1">from 23 Google Reviews</p>
+          <p className="text-[#F5F0E8]/50 text-sm">Space Coast, FL</p>
         </div>
       </section>
 

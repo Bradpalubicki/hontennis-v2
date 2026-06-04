@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 import { CheckCircle, XCircle } from "lucide-react"
 
@@ -133,6 +134,7 @@ export default function RSPACertificationPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Tennis Coach Certification FAQs" />
+      <RelatedArticles currentHref="/education/what-is-rspa-certification-tennis-coach" />
       <ContactSection />
     </>
   )

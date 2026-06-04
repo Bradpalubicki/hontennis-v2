@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
@@ -158,6 +159,7 @@ export default function TennisLessonsCostPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Tennis Lesson Cost FAQs" eyebrow="Frequently Asked Questions" />
+      <RelatedArticles currentHref="/education/how-much-do-tennis-lessons-cost-florida" />
       <ContactSection />
     </>
   )

@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 import { MapPin } from "lucide-react"
 
@@ -112,6 +113,7 @@ export default function BestTennisCourtsPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Space Coast Courts FAQs" />
+      <RelatedArticles currentHref="/education/best-tennis-courts-space-coast-florida" />
       <ContactSection />
     </>
   )

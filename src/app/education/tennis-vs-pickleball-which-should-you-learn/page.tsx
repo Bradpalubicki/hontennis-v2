@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
@@ -118,6 +119,7 @@ export default function TennisVsPickleballPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Tennis vs. Pickleball FAQs" />
+      <RelatedArticles currentHref="/education/tennis-vs-pickleball-which-should-you-learn" />
       <ContactSection />
     </>
   )

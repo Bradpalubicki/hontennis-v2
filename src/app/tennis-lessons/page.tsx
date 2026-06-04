@@ -119,7 +119,7 @@ export default function TennisLessonsPage() {
             ].map((item) => (
               <div key={item.step} className="flex flex-col gap-3">
                 <span className="text-3xl font-bold text-[#C9A84C]/20 font-mono">{item.step}</span>
-                <h4 className="text-lg font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>{item.title}</h4>
+                <h3 className="text-lg font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>{item.title}</h3>
                 <p className="text-[#F5F0E8]/55 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -152,6 +152,58 @@ export default function TennisLessonsPage() {
           </div>
         </div>
       </section>
+
+      {/* Pricing context */}
+      <section className="py-16 bg-[#1A2744]/30 border-t border-[#C9A84C]/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">Value Context</p>
+          <h2 className="text-2xl font-bold text-[#F5F0E8] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            What Does $80/hr Actually Mean?
+          </h2>
+          <p className="text-[#F5F0E8]/60 leading-relaxed">
+            Club-based tennis instruction in Florida typically runs <strong className="text-[#F5F0E8]">$90–$150/hr</strong> and requires facility membership fees on top of that. Coach Tim charges <strong className="text-[#C9A84C]">$80/hr</strong> — no membership, no facility fee, no commute required from you. He comes to your court.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-[#050810] border-t border-[#C9A84C]/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">Common Questions</p>
+            <h2 className="text-3xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>
+              Tennis Lesson FAQs
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {[
+              { q: "How long are lessons?", a: "Standard sessions are 60 minutes. Hitting lessons and clinics may run 90 minutes. Tim is flexible — if you need a shorter or longer session, just ask." },
+              { q: "Do you bring equipment?", a: "Tim brings balls and a ball hopper. You should bring your own racquet if you have one. If you need a loaner, let Tim know in advance." },
+              { q: "What court do we use?", a: "Tim comes to your court — wherever you play or prefer to play. If you don't have a home court, he can suggest one in your area." },
+              { q: "Do you teach kids?", a: "Yes. Tim coaches players of all ages including toddlers through competitive juniors. He's experienced adapting his teaching style for young players." },
+              { q: "What happens if it rains?", a: "Florida weather happens. Sessions cancelled due to weather are rescheduled at no charge. Tim will coordinate directly with you to find the next available time." },
+              { q: "Do you offer lesson packages?", a: "Yes — 5 lessons for $350 (save $50) or 10 lessons for $650 (save $150). Packages are the best value for players committed to real improvement." },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-[#C9A84C]/15 bg-[#1A2744] p-6">
+                <h3 className="text-[#F5F0E8] font-semibold mb-2">{faq.q}</h3>
+                <p className="text-[#F5F0E8]/60 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "How long are tennis lessons with Coach Tim?", "acceptedAnswer": { "@type": "Answer", "text": "Standard sessions are 60 minutes. Hitting lessons and clinics may run 90 minutes." } },
+          { "@type": "Question", "name": "Does Coach Tim bring equipment?", "acceptedAnswer": { "@type": "Answer", "text": "Tim brings balls and a ball hopper. You should bring your own racquet." } },
+          { "@type": "Question", "name": "What court do we use for tennis lessons?", "acceptedAnswer": { "@type": "Answer", "text": "Tim comes to your court — wherever you play or prefer to play on the Space Coast." } },
+          { "@type": "Question", "name": "Does Coach Tim teach kids tennis?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tim coaches players of all ages including toddlers through competitive juniors." } },
+          { "@type": "Question", "name": "What happens if it rains during a tennis lesson?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions cancelled due to weather are rescheduled at no charge." } },
+        ]
+      }) }} />
 
       <ContactSection />
     </>

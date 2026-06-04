@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
@@ -124,6 +125,7 @@ export default function SeniorHealthBenefitsPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Senior Tennis & Pickleball FAQs" />
+      <RelatedArticles currentHref="/education/senior-tennis-pickleball-health-benefits" />
       <ContactSection />
     </>
   )

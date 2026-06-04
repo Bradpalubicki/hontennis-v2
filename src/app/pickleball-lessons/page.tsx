@@ -136,6 +136,57 @@ export default function PickleballLessonsPage() {
         </div>
       </section>
 
+      {/* Pricing context */}
+      <section className="py-16 bg-[#1A2744]/30 border-t border-[#C9A84C]/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">Value Context</p>
+          <h2 className="text-2xl font-bold text-[#F5F0E8] mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+            Why $80/hr Is an Easy Decision
+          </h2>
+          <p className="text-[#F5F0E8]/60 leading-relaxed">
+            Pickleball instruction at Florida recreation centers and clubs typically runs <strong className="text-[#F5F0E8]">$75–$120/hr</strong> and requires facility access. Coach Tim charges <strong className="text-[#C9A84C]">$80/hr</strong> private — but he comes to <em>your</em> court. No facility fee, no travel time, no waiting for court availability.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 bg-[#050810] border-t border-[#C9A84C]/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-xs font-mono tracking-widest uppercase text-[#C9A84C] mb-3">Common Questions</p>
+            <h2 className="text-3xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>
+              Pickleball Lesson FAQs
+            </h2>
+          </div>
+          <div className="space-y-5">
+            {[
+              { q: "Do I need my own paddle?", a: "It helps to have one, but Tim can lend you a paddle for your first session. He'll also advise you on choosing the right paddle for your style." },
+              { q: "I've never played — where do I start?", a: "Start with a beginner clinic ($20/person) or a private lesson ($80/hr). Tim starts you from zero: rules, scoring, grip, serve, and your first real game." },
+              { q: "How is pickleball different from tennis?", a: "Smaller court, underhand serve, non-volley zone (the kitchen), and a wiffle-style ball. Many tennis concepts transfer — but pickleball has its own strategy and Tim teaches both." },
+              { q: "How long until I can play recreational games?", a: "Most complete beginners can join a recreational game after 2–3 sessions with Tim. He prioritizes getting you game-ready, not just drill-ready." },
+              { q: "What happens if it rains?", a: "Sessions cancelled due to weather are rescheduled at no cost. Tim coordinates directly with you." },
+              { q: "Do you teach doubles strategy?", a: "Yes — doubles is where most pickleball is played and Tim covers positioning, stacking, communication, and point construction for recreational through competitive doubles." },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-xl border border-[#C9A84C]/15 bg-[#1A2744] p-6">
+                <h3 className="text-[#F5F0E8] font-semibold mb-2">{faq.q}</h3>
+                <p className="text-[#F5F0E8]/60 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need my own pickleball paddle?", "acceptedAnswer": { "@type": "Answer", "text": "It helps to have one, but Tim can lend you a paddle for your first session." } },
+          { "@type": "Question", "name": "I've never played pickleball — where do I start?", "acceptedAnswer": { "@type": "Answer", "text": "Start with a beginner clinic ($20/person) or a private lesson ($80/hr). Tim starts you from zero." } },
+          { "@type": "Question", "name": "How long until I can play recreational pickleball games?", "acceptedAnswer": { "@type": "Answer", "text": "Most complete beginners can join a recreational game after 2–3 sessions with Tim." } },
+          { "@type": "Question", "name": "What happens if it rains during pickleball lessons?", "acceptedAnswer": { "@type": "Answer", "text": "Sessions cancelled due to weather are rescheduled at no cost." } },
+        ]
+      }) }} />
+
       <ContactSection />
     </>
   )

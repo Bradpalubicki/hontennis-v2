@@ -4,6 +4,7 @@ import Link from "next/link"
 import Breadcrumbs from "@/components/Breadcrumbs"
 import FAQSection from "@/components/FAQSection"
 import ContactSection from "@/components/ContactSection"
+import RelatedArticles from "@/components/RelatedArticles"
 import { articleSchema } from "@/lib/schema"
 
 export const metadata: Metadata = {
@@ -101,6 +102,7 @@ export default function FindPickleballCoachPage() {
       </article>
 
       <FAQSection faqs={faqs} title="Finding a Pickleball Coach FAQs" />
+      <RelatedArticles currentHref="/education/how-to-find-pickleball-coach-near-you" />
       <ContactSection />
     </>
   )
