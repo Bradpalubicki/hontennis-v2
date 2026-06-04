@@ -12,7 +12,13 @@ export const metadata: Metadata = {
   description: "Why tennis and pickleball are among the best sports for players 55+. Research-backed health benefits, how to start safely at any age, and what to look for in a senior-focused coach on Florida's Space Coast.",
   keywords: "senior tennis Florida, pickleball seniors health benefits, tennis benefits over 60, pickleball for seniors Space Coast, senior sports coaching Brevard County, how to start tennis at 60 70",
   alternates: { canonical: "https://hontennis.com/education/senior-tennis-pickleball-health-benefits" },
-  openGraph: { title: "Senior Tennis & Pickleball: Health Benefits and How to Start", description: "Research-backed health benefits of tennis and pickleball for players 55+, and how to start safely.", type: "article" },
+  openGraph: {
+    title: "Senior Tennis & Pickleball: Health Benefits and How to Start",
+    description: "Research-backed health benefits of tennis and pickleball for players 55+, and how to start safely.",
+    type: "article",
+    url: "https://hontennis.com/education/senior-tennis-pickleball-health-benefits",
+    images: [{ url: "https://hontennis.com/images/senior-tennis-active.webp", width: 1200, height: 800, alt: "Senior tennis players on a Florida court" }],
+  },
 }
 
 const faqs = [
@@ -102,7 +108,7 @@ export default function SeniorHealthBenefitsPage() {
             </ul>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>How to Start Safely</h2>
-            <p>The most important thing for a senior starting tennis or pickleball is <strong className="text-[#F5F0E8]">professional instruction from the beginning</strong>. Self-taught players often develop compensatory movement patterns that put unnecessary stress on knees, hips, and shoulders. A certified coach builds proper mechanics from day one — protecting your joints for years of play.</p>
+            <p>The most important thing for a senior starting tennis or pickleball is <strong className="text-[#F5F0E8]">professional instruction from the beginning</strong>. Self-taught players often develop compensatory movement patterns that put unnecessary stress on knees, hips, and shoulders. A certified coach builds proper mechanics from day one — protecting your joints for years of play. View Coach Tim&apos;s <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons</Link> and <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball lessons</Link> for all ages and skill levels across the Space Coast.</p>
             <p>Start with 2 sessions per week and build from there. Focus on consistency and enjoyment over competition, especially in the first few months. The goal is to build a sustainable habit, not win a tournament in week one.</p>
 
             <div className="rounded-xl border border-[#2D6A4F]/25 bg-[#2D6A4F]/10 p-6">

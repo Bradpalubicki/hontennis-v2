@@ -4,8 +4,8 @@ import ContactSection from "@/components/ContactSection"
 import { Heart, Shield, Activity, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Senior Tennis & Pickleball Coaching",
-  description: "Specialized tennis and pickleball coaching for players 55+. Coach Tim Brielmaier focuses on sustainable movement, injury prevention, and lifelong enjoyment of the sport. Mobile coaching across Florida's Space Coast.",
+  title: "Senior Tennis & Pickleball Coaching 55+ | HON Tennis",
+  description: "Tennis and pickleball coaching for players 55+. RSPA & IPTPA certified Coach Tim focuses on sustainable movement, injury prevention, and lifelong enjoyment. Mobile, Space Coast FL. $80/hr.",
   alternates: { canonical: "https://hontennis.com/senior-tennis-pickleball" },
   openGraph: {
     title: "Senior Tennis & Pickleball Coaching | HON Tennis",

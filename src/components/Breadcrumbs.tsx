@@ -18,7 +18,7 @@ export default function Breadcrumbs({ crumbs }: BreadcrumbsProps) {
       "@type": "ListItem",
       "position": i + 1,
       "name": crumb.label,
-      ...(crumb.href ? { "item": `https://hontennis-v2.vercel.app${crumb.href}` } : {}),
+      ...(crumb.href ? { "item": `https://hontennis.com${crumb.href}` } : {}),
     })),
   }
 

@@ -7,7 +7,7 @@ import BackToTop from "@/components/BackToTop"
 
 export const metadata: Metadata = {
   title: "About Coach Tim Brielmaier",
-  description: "Meet Coach Tim Brielmaier — 40+ years of tennis and pickleball coaching experience. RSPA & IPTPA certified. Former Director of Tennis at Vizcaya Clubhouse. Serving the Space Coast & Treasure Coast, Florida.",
+  description: "Meet Coach Tim Brielmaier — RSPA & IPTPA certified, 40+ years of tennis and pickleball coaching. Former Director of Tennis at Vizcaya Clubhouse. Serving Florida's Space Coast & Treasure Coast.",
   alternates: { canonical: "https://hontennis.com/about" },
   openGraph: {
     title: "About Coach Tim Brielmaier | HON Tennis",

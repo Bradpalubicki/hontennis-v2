@@ -3,8 +3,14 @@ import CityPage from "@/components/CityPage"
 
 export const metadata: Metadata = {
   title: "Tennis Lessons in Suntree FL | Coach Tim Brielmaier",
-  description: "RSPA certified tennis and pickleball lessons in Suntree, FL. Coach Tim Brielmaier comes to your court. Private $80/hr, clinics $20/person. Brevard County.",
+  description: "RSPA certified tennis & pickleball lessons in Suntree, FL. Coach Tim comes to your court — private $80/hr, clinics $20/person. Brevard County.",
   alternates: { canonical: "https://hontennis.com/tennis-lessons-suntree" },
+  openGraph: {
+    title: "Tennis Lessons in Suntree FL | Coach Tim Brielmaier",
+    description: "RSPA certified tennis and pickleball lessons in Suntree, FL. Coach Tim comes to your court. Private $80/hr, clinics $20/person. Brevard County.",
+    url: "https://hontennis.com/tennis-lessons-suntree",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — tennis & pickleball coach Suntree FL" }],
+  },
 }
 
 export default function SuntreePage() {

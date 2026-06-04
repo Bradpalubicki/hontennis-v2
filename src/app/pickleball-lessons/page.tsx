@@ -6,7 +6,7 @@ import { Award, TrendingUp, Users, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Pickleball Lessons — Space Coast FL",
-  description: "IPTPA certified pickleball coaching across Florida's Space Coast. Tennis-trained Coach Tim Brielmaier comes to your court. Beginners through competitive players. Melbourne, Palm Bay, Viera & more.",
+  description: "IPTPA certified pickleball coaching across Florida's Space Coast. Tennis-trained Coach Tim Brielmaier comes to your court. All skill levels. Melbourne, Palm Bay, Viera & more. $80/hr.",
   alternates: { canonical: "https://hontennis.com/pickleball-lessons" },
   openGraph: {
     title: "Pickleball Lessons | Coach Tim Brielmaier — Space Coast FL",

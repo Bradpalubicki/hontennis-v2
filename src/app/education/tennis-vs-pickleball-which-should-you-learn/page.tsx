@@ -12,7 +12,13 @@ export const metadata: Metadata = {
   description: "Should you learn tennis or pickleball first? A certified coach breaks down the differences in cost, learning curve, physical demands, and how the two sports complement each other.",
   keywords: "tennis vs pickleball, should I learn tennis or pickleball, pickleball vs tennis differences, which sport easier to learn, tennis pickleball Space Coast Florida",
   alternates: { canonical: "https://hontennis.com/education/tennis-vs-pickleball-which-should-you-learn" },
-  openGraph: { title: "Tennis vs. Pickleball: Which Should You Learn First?", description: "A certified coach breaks down both sports so you can make the right choice.", type: "article" },
+  openGraph: {
+    title: "Tennis vs. Pickleball: Which Should You Learn First?",
+    description: "A certified coach breaks down both sports so you can make the right choice.",
+    type: "article",
+    url: "https://hontennis.com/education/tennis-vs-pickleball-which-should-you-learn",
+    images: [{ url: "https://hontennis.com/images/pickleball-players.webp", width: 1200, height: 800, alt: "Pickleball players on a Florida court" }],
+  },
 }
 
 const faqs = [
@@ -97,11 +103,11 @@ export default function TennisVsPickleballPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>When to Start with Pickleball</h2>
-            <p>Pickleball is the right first sport if: you want to play competitive games within your first few weeks, your primary goal is social play, you have joint issues that make tennis uncomfortable, or you&apos;re 55+ and want a sport that&apos;s sustainable for decades.</p>
+            <p>Pickleball is the right first sport if: you want to play competitive games within your first few weeks, your primary goal is social play, you have joint issues that make tennis uncomfortable, or you&apos;re 55+ and want a sport that&apos;s sustainable for decades. See all <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball lessons and pricing</Link> on the Space Coast.</p>
             <p>Florida is the #1 state for pickleball — 1,071+ court locations and growing. You&apos;ll find games to join very quickly once you have the basics.</p>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>When to Start with Tennis</h2>
-            <p>Tennis is the right first sport if: you want deeper athletic development, you&apos;re interested in competitive play at higher levels, you want a skill ceiling you can chase for decades, or you have kids who may want to play competitively (college recruiting, junior circuits).</p>
+            <p>Tennis is the right first sport if: you want deeper athletic development, you&apos;re interested in competitive play at higher levels, you want a skill ceiling you can chase for decades, or you have kids who may want to play competitively (college recruiting, junior circuits). View Coach Tim&apos;s <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons for all ages</Link>.</p>
             <p>Tennis fundamentals also accelerate your pickleball game significantly — footwork, court coverage, and stroke mechanics transfer directly. Many of my best pickleball students started in tennis.</p>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>Why a Dual-Sport Coach Changes Everything</h2>

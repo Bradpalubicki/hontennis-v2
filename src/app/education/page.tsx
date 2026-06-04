@@ -7,12 +7,14 @@ import { Clock, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Tennis & Pickleball Education | HON Tennis",
-  description: "Free guides, tips, and expert advice from RSPA & IPTPA certified Coach Tim Brielmaier. Learn about tennis lessons, pickleball, coaching costs, and finding the right instructor on Florida's Space Coast.",
+  description: "Free guides from RSPA & IPTPA certified Coach Tim Brielmaier. Tennis lesson costs, pickleball tips, senior coaching, and finding the right instructor on Florida's Space Coast.",
   alternates: { canonical: "https://hontennis.com/education" },
   openGraph: {
     title: "Tennis & Pickleball Education Hub | HON Tennis",
     description: "Expert guides from Coach Tim Brielmaier — tennis lesson costs, pickleball tips, senior coaching, and more.",
     type: "website",
+    url: "https://hontennis.com/education",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — HON Tennis" }],
   },
 }
 

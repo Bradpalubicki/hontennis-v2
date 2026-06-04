@@ -5,12 +5,12 @@ import BackToTop from "@/components/BackToTop"
 import { Star } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Student Reviews",
-  description: "Read reviews from students of Coach Tim Brielmaier — tennis and pickleball coaching across Florida's Space Coast. See what players are saying about their experience.",
+  title: "Tennis & Pickleball Coaching Reviews — Coach Tim",
+  description: "5.0-star reviews from tennis and pickleball students of RSPA & IPTPA certified Coach Tim Brielmaier across Florida's Space Coast. Real players, real results.",
   alternates: { canonical: "https://hontennis.com/reviews" },
   openGraph: {
-    title: "Student Reviews | HON Tennis — Coach Tim Brielmaier",
-    description: "5-star reviews from tennis and pickleball students across Florida's Space Coast.",
+    title: "Tennis & Pickleball Reviews | HON Tennis Coach Tim",
+    description: "5.0 stars from 23 Google reviews. Tennis and pickleball students across Florida's Space Coast share their experience with Coach Tim Brielmaier.",
     url: "https://hontennis.com/reviews",
     images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier" }],
   },
@@ -67,9 +67,43 @@ const reviews = [
   },
 ]
 
+const reviewsSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Reviews for Coach Tim Brielmaier — HON Tennis",
+  "url": "https://hontennis.com/reviews",
+  "itemListElement": reviews.map((r, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": r.name,
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": r.rating,
+        "bestRating": 5,
+        "worstRating": 1,
+      },
+      "reviewBody": r.review,
+      "itemReviewed": {
+        "@type": "LocalBusiness",
+        "name": "HON Tennis — Coach Tim Brielmaier",
+        "url": "https://hontennis.com",
+      },
+    },
+  })),
+}
+
 export default function ReviewsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsSchema) }}
+      />
       <PageHero
         eyebrow="What Students Are Saying"
         title="Real Reviews from"

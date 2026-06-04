@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "Tennis Lessons in Sebastian FL | Coach Tim Brielmaier",
   description: "RSPA certified tennis and pickleball lessons in Sebastian, FL. Coach Tim Brielmaier comes to your court. Private $80/hr, clinics $20/person. Serving Indian River County.",
   alternates: { canonical: "https://hontennis.com/tennis-lessons-sebastian" },
+  openGraph: {
+    title: "Tennis Lessons in Sebastian FL | Coach Tim Brielmaier",
+    description: "RSPA certified tennis and pickleball lessons in Sebastian, FL. Coach Tim comes to your court. Private $80/hr, clinics $20/person. Serving Indian River County.",
+    url: "https://hontennis.com/tennis-lessons-sebastian",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — tennis & pickleball coach Sebastian FL" }],
+  },
 }
 
 export default function SebastianPage() {

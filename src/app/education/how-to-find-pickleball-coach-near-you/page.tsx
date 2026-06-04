@@ -12,7 +12,13 @@ export const metadata: Metadata = {
   description: "With 24 million US pickleball players in 2025, demand for qualified coaches is exploding. Here's how to find, evaluate, and book a certified pickleball instructor in Florida.",
   keywords: "find pickleball coach near me, pickleball instructor Florida, IPTPA certified pickleball coach, pickleball lessons Space Coast, how to find pickleball teacher Melbourne FL",
   alternates: { canonical: "https://hontennis.com/education/how-to-find-pickleball-coach-near-you" },
-  openGraph: { title: "How to Find a Pickleball Coach Near You (Florida Guide)", description: "How to find, evaluate, and book a qualified pickleball instructor.", type: "article" },
+  openGraph: {
+    title: "How to Find a Pickleball Coach Near You (Florida Guide)",
+    description: "How to find, evaluate, and book a qualified pickleball instructor.",
+    type: "article",
+    url: "https://hontennis.com/education/how-to-find-pickleball-coach-near-you",
+    images: [{ url: "https://hontennis.com/images/pickleball-players.webp", width: 1200, height: 800, alt: "Pickleball coaching session — Space Coast Florida" }],
+  },
 }
 
 const faqs = [
@@ -22,6 +28,40 @@ const faqs = [
   { question: "Is it worth hiring a pickleball coach?", answer: "Yes — especially for beginners. Self-taught players often develop habits (wrong grip, poor kitchen positioning, incorrect serve technique) that are very difficult to unlearn. A certified coach gets you playing correctly from the start, which accelerates improvement dramatically." },
   { question: "Can I learn pickleball without lessons?", answer: "You can learn the basics from YouTube and open play, but you'll develop faster with structured instruction. Most self-taught players plateau because they repeat the same patterns. A coach identifies the specific adjustments that unlock your next level." },
 ]
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Find a Pickleball Coach Near You",
+  "description": "A step-by-step guide to finding, evaluating, and booking a certified pickleball instructor near you in Florida.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Define your goals and skill level",
+      "text": "Before searching for a coach, clarify what you want to achieve — beginner fundamentals, competitive improvement, specific shot corrections, or fitness. Knowing your goals helps you find a coach whose specialty aligns with your needs.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Search for IPTPA-certified coaches near you",
+      "text": "Use the IPTPA directory at iptpa.com/find-a-pro or PPR at pprpickleball.org/find-a-coach to find certified instructors in your area. Certification ensures the coach has formal, pickleball-specific teaching training — not just strong playing ability.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Ask about their coaching philosophy",
+      "text": "A good coach should be able to explain their teaching approach clearly. Ask how they structure a first lesson, how they assess skill level, and what a typical progression looks like. Coaches who give vague answers may not have a systematic method.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Request a trial lesson",
+      "text": "Book a single trial session before committing to a package. Use it to assess communication style, how they identify your weak points, and whether you leave with clear, actionable takeaways.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Evaluate fit and book ongoing sessions",
+      "text": "After your trial lesson, assess whether the coach's style matches your learning preferences. If the fit feels right, commit to an ongoing series — consistent instruction from a single coach builds faster than sporadic sessions with multiple instructors.",
+    },
+  ],
+}
 
 export default function FindPickleballCoachPage() {
   const schema = articleSchema({
@@ -35,6 +75,7 @@ export default function FindPickleballCoachPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <Breadcrumbs crumbs={[{ label: "Home", href: "/" }, { label: "Education", href: "/education" }, { label: "How to Find a Pickleball Coach" }]} />
 
       <article className="bg-[#0A0F1E]">
@@ -87,8 +128,8 @@ export default function FindPickleballCoachPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>On Florida&apos;s Space Coast</h2>
-            <p>Coach Tim Brielmaier is IPTPA certified and serves Melbourne, Palm Bay, Viera, Rockledge, Indialantic, Vero Beach, Sebastian, and surrounding areas. As a mobile coach, he comes to your court — no facility membership required, no commute on your end.</p>
-            <p>Tim also holds RSPA certification in tennis, making him a rare dual-certified instructor for players who want to learn or improve in both sports.</p>
+            <p>Coach Tim Brielmaier is IPTPA certified and serves Melbourne, Palm Bay, Viera, Rockledge, Indialantic, Vero Beach, Sebastian, and surrounding areas. As a mobile coach, he comes to your court — no facility membership required, no commute on your end. View all <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball lessons</Link> and pricing.</p>
+            <p>Tim also holds RSPA certification in tennis, making him a rare dual-certified instructor for players who want to learn or improve in both sports. If you&apos;re considering tennis, see <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons on the Space Coast</Link>.</p>
           </div>
 
           <div className="mt-10 rounded-2xl border border-[#C9A84C]/25 bg-[#1A2744] p-7 text-center">

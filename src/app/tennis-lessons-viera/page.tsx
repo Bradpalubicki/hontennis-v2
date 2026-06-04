@@ -3,8 +3,14 @@ import CityPage from "@/components/CityPage"
 
 export const metadata: Metadata = {
   title: "Tennis Lessons in Viera FL | Coach Tim Brielmaier",
-  description: "RSPA certified tennis and pickleball lessons in Viera, FL. Coach Tim Brielmaier comes to your court. Private $80/hr, clinics $20/person. All ages & skill levels.",
+  description: "RSPA certified tennis & pickleball lessons in Viera, FL. Coach Tim comes to your court — private $80/hr, clinics $20/person. All ages & skill levels.",
   alternates: { canonical: "https://hontennis.com/tennis-lessons-viera" },
+  openGraph: {
+    title: "Tennis Lessons in Viera FL | Coach Tim Brielmaier",
+    description: "RSPA certified tennis and pickleball lessons in Viera, FL. Coach Tim comes to your court. Private $80/hr, clinics $20/person. All ages & skill levels.",
+    url: "https://hontennis.com/tennis-lessons-viera",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — tennis & pickleball coach Viera FL" }],
+  },
 }
 
 export default function VieraPage() {

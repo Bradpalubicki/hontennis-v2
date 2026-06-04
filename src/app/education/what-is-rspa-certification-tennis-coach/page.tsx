@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   description: "What does RSPA certification mean for a tennis coach? Learn the difference between certified and uncertified instructors, what questions to ask before hiring, and what red flags to watch for.",
   keywords: "RSPA certification tennis, what is RSPA certified coach, tennis instructor certification, IPTPA pickleball certification, how to choose tennis coach Florida, certified tennis instructor Space Coast",
   alternates: { canonical: "https://hontennis.com/education/what-is-rspa-certification-tennis-coach" },
-  openGraph: { title: "What Is RSPA Certification? Choosing a Tennis Coach", description: "What RSPA and IPTPA certifications mean, and how to find the right coach.", type: "article" },
+  openGraph: {
+    title: "What Is RSPA Certification? Choosing a Tennis Coach",
+    description: "What RSPA and IPTPA certifications mean, and how to find the right coach.",
+    type: "article",
+    url: "https://hontennis.com/education/what-is-rspa-certification-tennis-coach",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — RSPA certified tennis instructor" }],
+  },
 }
 
 const faqs = [
@@ -86,8 +92,8 @@ export default function RSPACertificationPage() {
 
           <div className="space-y-8 text-[#F5F0E8]/70 text-lg leading-relaxed">
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>What RSPA Certification Means</h2>
-            <p>The Racquet Sports Professionals Association certifies tennis instructors who have demonstrated competency in lesson design, stroke mechanics, player assessment, and teaching methodology. It&apos;s one of several recognized certifying bodies in tennis alongside USPTA (United States Professional Tennis Association) and PTR (Professional Tennis Registry).</p>
-            <p>Certification isn&apos;t just about playing ability — it&apos;s about instructional skill. A certified coach knows how to break down a forehand for a 7-year-old differently than for a 65-year-old. That&apos;s a learned skill, not an innate one.</p>
+            <p>The Racquet Sports Professionals Association certifies tennis instructors who have demonstrated competency in lesson design, stroke mechanics, player assessment, and teaching methodology. It&apos;s one of several recognized certifying bodies in tennis alongside USPTA (United States Professional Tennis Association) and PTR (Professional Tennis Registry). If you&apos;re ready to book <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons on the Space Coast</Link> with a certified coach, Coach Tim checks every box.</p>
+            <p>Certification isn&apos;t just about playing ability — it&apos;s about instructional skill. A certified coach knows how to break down a forehand for a 7-year-old differently than for a 65-year-old. That&apos;s a learned skill, not an innate one. The same principles apply to <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball coaching</Link> — IPTPA certification ensures your instructor has been formally trained in pickleball-specific methodology.</p>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>Green Flags vs. Red Flags</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   description: "A local coach's guide to the top tennis and pickleball courts in Melbourne, Viera, Palm Bay, Rockledge, and across Brevard County — public parks, HOA courts, and club facilities.",
   keywords: "tennis courts Melbourne FL, pickleball courts Space Coast, tennis courts Viera Florida, Wickham Park tennis, best tennis courts Brevard County, pickleball courts Brevard",
   alternates: { canonical: "https://hontennis.com/education/best-tennis-courts-space-coast-florida" },
-  openGraph: { title: "Best Tennis & Pickleball Courts on Florida's Space Coast", description: "A local coach's guide to courts across Brevard County.", type: "article" },
+  openGraph: {
+    title: "Best Tennis & Pickleball Courts on Florida's Space Coast",
+    description: "A local coach's guide to courts across Brevard County.",
+    type: "article",
+    url: "https://hontennis.com/education/best-tennis-courts-space-coast-florida",
+    images: [{ url: "https://hontennis.com/images/pickleball-lady.jpg", width: 1200, height: 800, alt: "Pickleball player on a Florida court — Space Coast" }],
+  },
 }
 
 const courts = [
@@ -98,7 +104,7 @@ export default function BestTennisCourtsPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>The Advantage of a Mobile Coach</h2>
-            <p>One of the most underrated benefits of mobile coaching is that your lesson happens at the court you actually play on. That means the drills, footwork patterns, and positioning work in your session directly transfer to your regular game — not to some facility across town you&apos;ll never return to.</p>
+            <p>One of the most underrated benefits of mobile coaching is that your lesson happens at the court you actually play on. That means the drills, footwork patterns, and positioning work in your session directly transfer to your regular game — not to some facility across town you&apos;ll never return to. Whether you want <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons</Link> or <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball lessons</Link>, Tim comes to the court that works best for you.</p>
             <p>I&apos;ve coached at virtually every significant court on the Space Coast. Wherever you play, I can come to you.</p>
           </div>
 

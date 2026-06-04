@@ -3,8 +3,14 @@ import CityPage from "@/components/CityPage"
 
 export const metadata: Metadata = {
   title: "Tennis Lessons in Melbourne FL | Coach Tim Brielmaier",
-  description: "RSPA certified tennis and pickleball lessons in Melbourne, FL. Coach Tim Brielmaier comes to your court. Private $80/hr, clinics $20/person. All ages & skill levels.",
+  description: "RSPA certified tennis & pickleball lessons in Melbourne, FL. Coach Tim comes to your court — private $80/hr, clinics $20/person. All ages & skill levels.",
   alternates: { canonical: "https://hontennis.com/tennis-lessons-melbourne" },
+  openGraph: {
+    title: "Tennis Lessons in Melbourne FL | Coach Tim Brielmaier",
+    description: "RSPA certified tennis and pickleball lessons in Melbourne, FL. Coach Tim comes to your court. Private $80/hr, clinics $20/person. All ages & skill levels.",
+    url: "https://hontennis.com/tennis-lessons-melbourne",
+    images: [{ url: "https://hontennis.com/images/coach-tim-portrait.webp", width: 800, height: 1000, alt: "Coach Tim Brielmaier — tennis & pickleball coach Melbourne FL" }],
+  },
 }
 
 export default function MelbournePage() {

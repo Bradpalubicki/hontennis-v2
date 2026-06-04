@@ -12,8 +12,53 @@ interface CityPageProps {
 }
 
 export default function CityPage({ city, county, slug, courts, blurb, faq }: CityPageProps) {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Tennis & Pickleball Lessons in ${city}, FL`,
+    "description": `RSPA & IPTPA certified coach Tim Brielmaier offers private lessons, group sessions, and clinics in ${city}, FL. Mobile coaching — Tim comes to your court.`,
+    "provider": {
+      "@type": "Person",
+      "name": "Tim Brielmaier",
+      "url": "https://hontennis.com/about",
+      "jobTitle": "Tennis & Pickleball Coach",
+      "telephone": "+14142326840",
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": city,
+      "containedInPlace": {
+        "@type": "State",
+        "name": "Florida",
+      },
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Private Lesson",
+        "price": "80",
+        "priceCurrency": "USD",
+        "unitText": "per hour",
+        "description": "One-on-one private tennis or pickleball lesson at your court.",
+      },
+      {
+        "@type": "Offer",
+        "name": "Clinic",
+        "price": "20",
+        "priceCurrency": "USD",
+        "unitText": "per person",
+        "description": "Group clinic for 5–8 players, 90 minutes.",
+      },
+    ],
+    "url": `https://hontennis.com/tennis-lessons-${slug}`,
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-[#0A0F1E]" />

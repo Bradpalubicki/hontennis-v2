@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     title: "How Much Do Tennis Lessons Cost in Florida? 2026 Guide",
     description: "Private lessons, group sessions, clinics — complete pricing breakdown for Florida's Space Coast.",
     type: "article",
+    url: "https://hontennis.com/education/how-much-do-tennis-lessons-cost-florida",
+    images: [{ url: "https://hontennis.com/images/tennis-lesson.webp", width: 1200, height: 800, alt: "Tennis lesson in progress — Space Coast Florida" }],
   },
 }
 
@@ -27,6 +29,40 @@ const faqs = [
   { question: "Do tennis coaches charge more for traveling to my court?", answer: "Some coaches charge travel fees; others include it in their rate. Coach Tim's $80/hr rate includes travel to your court across the Space Coast — Melbourne, Palm Bay, Viera, Vero Beach, and surrounding areas." },
   { question: "Are pickleball lessons the same price as tennis?", answer: "Yes — IPTPA-certified pickleball instruction from Coach Tim is the same rate as tennis: $80/hr private, $20/person for clinics. Some specialized pickleball coaches charge a premium due to demand, but Tim's dual-certification keeps pricing consistent." },
 ]
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Evaluate and Budget for Tennis Lessons in Florida",
+  "description": "A step-by-step guide to understanding tennis lesson formats, comparing Florida instructor rates, and finding the best value for your budget.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Understand lesson formats (private vs group vs clinic)",
+      "text": "Tennis instruction comes in three main formats: private lessons (one-on-one, typically $60–$120/hr), group lessons (2–4 players sharing a session), and clinics (5–8 players, 90 minutes, $15–$25/person). Each format serves different goals and budgets — private lessons accelerate improvement fastest, clinics are most affordable.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Compare rates in your area ($60–$120/hr range in Florida)",
+      "text": "In Florida, certified tennis instructors generally charge $60–$120/hr for private sessions. Space Coast rates run $70–$90/hr. Miami and Tampa instructors often charge $100–$150+/hr due to higher cost of living. Always verify the coach holds RSPA or USPTA certification before comparing prices.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Ask about package deals or multi-session discounts",
+      "text": "Most coaches offer discounted packages for 5 or 10 session commitments. A typical 5-lesson package saves $40–$60 vs. pay-per-session. Ask about this upfront — coaches won't always advertise it unless asked. Only buy a package after a trial lesson confirms the fit.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Factor in travel fees for mobile coaches",
+      "text": "Some coaches charge flat travel fees on top of their hourly rate; others include it. Mobile coaches who travel to your court eliminate facility fees and court rental costs, which can offset a slightly higher hourly rate. Always clarify what's included in the quoted price.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Book a trial lesson to assess value",
+      "text": "Before committing to a series, book a single trial lesson. Evaluate whether the coach clearly identifies your weaknesses, explains the reasoning behind each drill, and provides a structured takeaway. A good lesson should leave you with specific things to practice before the next session.",
+    },
+  ],
+}
 
 export default function TennisLessonsCostPage() {
   const schema = articleSchema({
@@ -40,6 +76,7 @@ export default function TennisLessonsCostPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
       <Breadcrumbs crumbs={[
         { label: "Home", href: "/" },
         { label: "Education", href: "/education" },
@@ -144,7 +181,7 @@ export default function TennisLessonsCostPage() {
             </div>
 
             <h2 className="text-2xl font-bold text-[#F5F0E8]" style={{ fontFamily: "var(--font-playfair)" }}>Ready to Book a Lesson on the Space Coast?</h2>
-            <p>Coach Tim offers private lessons, group sessions, and clinics across Melbourne, Palm Bay, Viera, Rockledge, Vero Beach, Sebastian, and surrounding areas. He comes to your court — no travel on your end, no facility fees.</p>
+            <p>Coach Tim offers <Link href="/tennis-lessons" className="text-[#C9A84C] hover:underline">tennis lessons</Link> and <Link href="/pickleball-lessons" className="text-[#C9A84C] hover:underline">pickleball lessons</Link> across Melbourne, Palm Bay, Viera, Rockledge, Vero Beach, Sebastian, and surrounding areas. He comes to your court — no travel on your end, no facility fees.</p>
           </div>
 
           {/* CTA */}

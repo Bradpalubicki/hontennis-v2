@@ -8,7 +8,7 @@ import { Award, CheckCircle, Clock, Users } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Tennis Lessons — Space Coast FL",
-  description: "Private, group, and clinic tennis lessons across Florida's Space Coast. RSPA certified Coach Tim Brielmaier comes to your court. Melbourne, Palm Bay, Viera & more. $80/hr.",
+  description: "RSPA certified tennis lessons across Florida's Space Coast. Coach Tim comes to your court — private $80/hr, clinics $20/person. All ages & levels. Melbourne, Palm Bay, Viera & more.",
   alternates: { canonical: "https://hontennis.com/tennis-lessons" },
   openGraph: {
     title: "Tennis Lessons | Coach Tim Brielmaier — Space Coast FL",
