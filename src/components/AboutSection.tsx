@@ -125,7 +125,7 @@ export default function AboutSection() {
                   {cred.year}
                 </div>
                 <div>
-                  <h4 className="text-[#F5F0E8] font-semibold mb-1">{cred.title}</h4>
+                  <h3 className="text-[#F5F0E8] font-semibold mb-1">{cred.title}</h3>
                   <p className="text-[#F5F0E8]/50 text-sm leading-relaxed">{cred.detail}</p>
                 </div>
               </motion.div>

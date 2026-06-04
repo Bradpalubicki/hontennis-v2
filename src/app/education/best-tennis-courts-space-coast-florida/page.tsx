@@ -58,7 +58,7 @@ export default function BestTennisCourtsPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex items-center gap-3 mb-5">
             <span className="text-xs font-mono uppercase tracking-widest bg-white/5 text-[#F5F0E8]/50 border border-white/10 px-2 py-1 rounded">Local Guide</span>
-            <span className="text-[#F5F0E8]/30 text-xs font-mono">8 min read · June 2026</span>
+            <span className="text-[#F5F0E8]/30 text-xs font-mono">8 min read · <time dateTime="2026-06-03">June 2026</time></span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#F5F0E8] mb-4 leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
             Best Tennis & Pickleball Courts on Florida&apos;s Space Coast

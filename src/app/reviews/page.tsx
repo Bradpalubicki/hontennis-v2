@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import PageHero from "@/components/PageHero"
 import ContactSection from "@/components/ContactSection"
+import BackToTop from "@/components/BackToTop"
 import { Star } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -140,6 +141,7 @@ export default function ReviewsPage() {
       </section>
 
       <ContactSection />
+      <BackToTop />
     </>
   )
 }

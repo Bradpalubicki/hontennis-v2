@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
+import MobileBookingBar from "@/components/MobileBookingBar"
+import BackToTop from "@/components/BackToTop"
 
 export const metadata: Metadata = {
   title: "Services & Pricing",
@@ -79,6 +81,8 @@ export default function ServicesPage() {
       </section>
 
       <ContactSection />
+      <MobileBookingBar />
+      <BackToTop />
     </>
   )
 }

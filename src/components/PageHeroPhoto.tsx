@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useReducedMotion } from "framer-motion"
+import Image from "next/image"
 import { Phone } from "lucide-react"
 
 interface PageHeroPhotoProps {
@@ -35,19 +36,14 @@ export default function PageHeroPhoto({
   return (
     <section className="relative flex items-center overflow-hidden" style={{ minHeight: "100svh" }}>
       {/* Full-bleed background photo — covers entire hero */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image}
         alt={alt}
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: objectPosition,
-          zIndex: 0,
-        }}
+        fill
+        priority
+        className="object-cover"
+        style={{ objectPosition, zIndex: 0 }}
+        sizes="100vw"
       />
 
       {/* Dark overlay — readable but photo clearly visible */}

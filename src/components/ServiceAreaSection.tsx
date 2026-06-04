@@ -87,8 +87,7 @@ export default function ServiceAreaSection() {
 
             {/* Clinic photo */}
             <div className="mt-6 relative rounded-xl overflow-hidden border border-[#C9A84C]/15" style={{ height: '220px' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/images/coach-tim-clinic.webp" alt="Coach Tim running a clinic on the Space Coast" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+              <Image src="/images/coach-tim-clinic.webp" alt="Coach Tim running a clinic on the Space Coast" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 50vw" />
               <div className="absolute inset-0 bg-[#0A0F1E]/50" />
               <div className="absolute inset-0 flex items-end p-4">
                 <a

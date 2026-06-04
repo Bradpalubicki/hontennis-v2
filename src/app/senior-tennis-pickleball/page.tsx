@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import PageHero from "@/components/PageHero"
+import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ContactSection from "@/components/ContactSection"
 import { Heart, Shield, Activity, Users } from "lucide-react"
 
@@ -61,17 +60,18 @@ const faqs = [
 export default function SeniorPage() {
   return (
     <>
-      <div className="relative h-[50vh] min-h-[320px] w-full overflow-hidden">
-        <Image src="/images/senior-tennis-active.webp" alt="Senior tennis players — Space Coast Florida" fill priority className="object-cover object-top" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1E]/60 via-[#0A0F1E]/30 to-[#0A0F1E]" />
-      </div>
-      <PageHero
+      <PageHeroPhoto
+        image="/images/senior-tennis-active.webp"
+        alt="Senior tennis players on a Florida court — Space Coast"
         eyebrow="Senior & Longevity Coaching · All Ages Welcome"
         title="Tennis & Pickleball Coaching"
         titleAccent="Built for 55+"
         subtitle="Specialized instruction that prioritizes your health, mobility, and long-term enjoyment of the sport. Coach Tim comes to your court — no travel required."
         ctaText="Book a Senior Lesson"
         ctaHref="sms:+14142326840?body=Hi Tim, I'm interested in senior coaching!"
+        ctaSecondaryText="Call Tim — (414) 232-6840"
+        ctaSecondaryHref="tel:+14142326840"
+        objectPosition="center center"
       />
 
       {/* Stats for senior pickleball market */}

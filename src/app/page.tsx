@@ -6,6 +6,7 @@ import BookingSection from "@/components/BookingSection"
 import AboutSection from "@/components/AboutSection"
 import ServiceAreaSection from "@/components/ServiceAreaSection"
 import ContactSection from "@/components/ContactSection"
+import BackToTop from "@/components/BackToTop"
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutSection />
       <ServiceAreaSection />
       <ContactSection />
+      <BackToTop />
     </>
   )
 }

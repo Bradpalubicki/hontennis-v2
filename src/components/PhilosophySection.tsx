@@ -35,8 +35,7 @@ export default function PhilosophySection() {
     <section className="py-24 bg-[#050810] section-divider">
       {/* Full-width photo banner above section */}
       <div className="relative w-full mb-16 overflow-hidden" style={{ height: '50vh' }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/florida-court.webp" alt="Tennis court — Space Coast Florida" className="w-full h-full object-cover object-top" />
+        <Image src="/images/florida-court.webp" alt="Tennis court — Space Coast Florida" fill className="object-cover object-top" sizes="100vw" />
         <div className="absolute inset-0 bg-[#050810]/70" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#050810] via-transparent to-[#050810]" />
       </div>

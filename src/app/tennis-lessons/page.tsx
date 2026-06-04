@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ServicesSection from "@/components/ServicesSection"
 import ContactSection from "@/components/ContactSection"
+import MobileBookingBar from "@/components/MobileBookingBar"
 import { Award, CheckCircle, Clock, Users } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -145,8 +147,7 @@ export default function TennisLessonsPage() {
               { src: "/images/kids-tennis-girl-red.jpg", alt: "Junior tennis player on clay court — Florida youth tennis", position: "object-top" },
             ].map((photo, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-[#C9A84C]/15 aspect-square relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo.src} alt={photo.alt} className={`w-full h-full object-cover ${photo.position} hover:scale-105 transition-transform duration-500`} />
+                <Image src={photo.src} alt={photo.alt} fill className={`object-cover ${photo.position} hover:scale-105 transition-transform duration-500`} sizes="(max-width: 768px) 50vw, 25vw" />
               </div>
             ))}
           </div>
@@ -206,6 +207,7 @@ export default function TennisLessonsPage() {
       }) }} />
 
       <ContactSection />
+      <MobileBookingBar />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import PageHeroPhoto from "@/components/PageHeroPhoto"
 import ContactSection from "@/components/ContactSection"
+import MobileBookingBar from "@/components/MobileBookingBar"
 import { Award, TrendingUp, Users, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -188,6 +189,7 @@ export default function PickleballLessonsPage() {
       }) }} />
 
       <ContactSection />
+      <MobileBookingBar />
     </>
   )
 }

@@ -57,7 +57,7 @@ export default function TennisLessonsCostPage() {
           {/* Category + meta */}
           <div className="flex items-center gap-3 mb-5">
             <span className="text-xs font-mono uppercase tracking-widest bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20 px-2 py-1 rounded">Pricing Guide</span>
-            <span className="text-[#F5F0E8]/30 text-xs font-mono">6 min read · Updated June 2026</span>
+            <span className="text-[#F5F0E8]/30 text-xs font-mono">6 min read · Updated <time dateTime="2026-06-03">June 2026</time></span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-bold text-[#F5F0E8] mb-4 leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>

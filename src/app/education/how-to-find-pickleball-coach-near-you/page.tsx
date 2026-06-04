@@ -46,7 +46,7 @@ export default function FindPickleballCoachPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex items-center gap-3 mb-5">
             <span className="text-xs font-mono uppercase tracking-widest bg-[#C9A84C]/10 text-[#C9A84C] border border-[#C9A84C]/20 px-2 py-1 rounded">Finding a Coach</span>
-            <span className="text-[#F5F0E8]/30 text-xs font-mono">5 min read · June 2026</span>
+            <span className="text-[#F5F0E8]/30 text-xs font-mono">5 min read · <time dateTime="2026-06-03">June 2026</time></span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#F5F0E8] mb-4 leading-tight" style={{ fontFamily: "var(--font-playfair)" }}>
             How to Find a Pickleball Coach Near You (Florida Guide)
